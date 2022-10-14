@@ -86,6 +86,7 @@ button {
 }
 
 /* What does this CSS rule do? */
+Specifies what the drop-down menu does
 select {
   -moz-appearance: none;
   -webkit-appearance: none;

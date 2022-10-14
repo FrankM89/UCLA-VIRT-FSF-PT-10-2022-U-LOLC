@@ -106,6 +106,8 @@ footer {
 
 .links a:hover {
   text-decoration: underline;
+  color: black;
+  cursor: grab;
 }
 
 @media screen and (max-width: 768px) {
