@@ -1,4 +1,3 @@
-
 // Array of options for computer to pick from
 var options = ["R", "P", "S"];
 
