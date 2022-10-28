@@ -12,7 +12,8 @@ function calculateTotal(total, tipAmount) {
 }
 
 function addTip(event) {
-  var tipPercentage = tipEl.value * .01;
+  event.preventDefault(); // < ANSWER
+  var tipPercentage = tipEl.value * 0.01;
   var total = totalEl.value;
   var tipAmount = calculateTip(total, tipPercentage);
   var newTotal = calculateTotal(tipAmount, total);

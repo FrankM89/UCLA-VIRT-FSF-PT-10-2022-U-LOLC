@@ -27,7 +27,7 @@ What action may be preventing the calculated totals from being rendered correctl
 
 If you have completed this activity, work through the following challenge with your partner to further your knowledge:
 
-* Even when an event is canceled, it continues to propogate. What does that mean? 
+* Even when an event is canceled, it continues to propagate. What does that mean? 
 
 Use [Google](https://www.google.com) or another search engine to research this.
 
