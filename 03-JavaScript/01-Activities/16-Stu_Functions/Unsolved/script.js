@@ -20,5 +20,3 @@ isEqual(10, 10);
 // TODO: Rewrite isEqual as a function expression called 'isEqualTakeTwo`
 
 // TODO: Call the isEqualTakeTwo function so that it logs "They are not equal"
-
-

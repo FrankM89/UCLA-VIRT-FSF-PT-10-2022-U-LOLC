@@ -12,7 +12,9 @@ Work with a partner to implement the following user story:
 
 * It's done if, when the two values are equal but not strictly equal, the message "They are equal in value" is logged.
 
-* It's done if, when the values are not equal or strictly equal, the message "The values are not equal" is logged.
+* It's done if, when the values are not equal or strictly equal, the message "They are not equal" is logged.
+
+* It's done if, when the `isEqual` function is rewritten as a function expression and when called with values that are not equal or strictly equal, the message "They are not equal" is logged.
 
 ## 💡 Hints
 
