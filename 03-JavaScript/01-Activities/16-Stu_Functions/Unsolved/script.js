@@ -33,5 +33,8 @@ var isEqualTakeTwo = function(x, y) {
 }
 
 // TODO: Call the isEqualTakeTwo function so that it logs "They are not equal"
+<<<<<<< HEAD
 
 isEqualTakeTwo(2,3);
+=======
+>>>>>>> 7623b18b6dfc852d827feda726a89790647b7eb1
