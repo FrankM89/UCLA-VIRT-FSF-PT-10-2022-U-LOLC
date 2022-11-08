@@ -6,12 +6,17 @@
   --light: #fffaf7;
 }
 
+* {
+  font-family: 'Signika Negative', sans-serif;
+}
+
 ::selection {
   color: var(--brown);
   background-color: var(--light);
 }
 
 .custom-navbar {
+  font-family: 'Signika Negative', sans-serif;
   background-color: var(--teal);
 }
 
@@ -25,6 +30,7 @@
 }
 
 .hero {
+  font-family: 'Signika Negative', sans-serif;
   background-color: var(--lightteal);
   color: var(--teal);
 }
@@ -40,11 +46,13 @@
 }
 
 .custom-card {
+  font-family: 'Signika Negative', sans-serif;
   border-color: var(--teal);
   color: var(--brown);
 }
 
 .custom-card-header {
+  font-family: 'Signika Negative', sans-serif;
   background-color: var(--teal);
   color: var(--lightteal);
 }

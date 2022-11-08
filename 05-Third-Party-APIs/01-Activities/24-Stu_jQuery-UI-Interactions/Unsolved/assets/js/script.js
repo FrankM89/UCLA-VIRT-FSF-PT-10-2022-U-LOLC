@@ -66,3 +66,14 @@ $(function () {
 
 // Add interaction here
 //
+$( function() {
+  $( "#skills-list" ).sortable({
+    revert: true
+  });
+  $( "#skills-list" ).draggable({
+    connectToSortable: "#sortable",
+    helper: "clone",
+    revert: "invalid"
+  });
+  $( "ul, li" ).disableSelection();
+} );
