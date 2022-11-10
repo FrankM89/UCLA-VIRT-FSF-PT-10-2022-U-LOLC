@@ -27,6 +27,9 @@ The following image demonstrates the web application's appearance and functional
 If you have completed this activity, work through the following challenge with your partner to further your knowledge:
 
 * In `fetch()` requests we use the URL. What is the difference between a URL and URI? 
+Answer:
+
+URI identifies a resource and differentiates it from others by using a name, location, or both. URL identifies the web address or location of a unique resource. URI contains components like a scheme, authority, path, and query. URL has similar components to a URI, but its authority consists of a domain name and port.
 
 Use [Google](https://www.google.com) or another search engine to research this.
 
