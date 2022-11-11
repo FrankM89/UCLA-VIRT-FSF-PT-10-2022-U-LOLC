@@ -10,8 +10,18 @@ function getApi() {
     })
     .then(function (data) {
       // Use the console to examine the response
+      userContainer.innerHTML = ""; // Clears the screen without repeating
+      // when you click again.
       console.log(data);
       // TODO: Loop through the data and generate your HTML
+      for (var i = 0; i < data.length; i++) {
+        var userName = document.createElement('h3');
+        var url = document.createElement('p');
+        userName.textContent = data[i].login;
+        url.textContent = data[i].url;
+        userContainer.append(userName);
+        userContainer.append(url);
+      }
     });
 }
 fetchButton.addEventListener('click', getApi);
