@@ -1,8 +1,8 @@
-var userFormEl = document.querySelector('#user-form');
-var languageButtonsEl = document.querySelector('#language-buttons');
-var nameInputEl = document.querySelector('#username');
-var repoContainerEl = document.querySelector('#repos-container');
-var repoSearchTerm = document.querySelector('#repo-search-term');
+var userFormEl = document.querySelector("#user-form");
+var languageButtonsEl = document.querySelector("#language-buttons");
+var nameInputEl = document.querySelector("#username");
+var repoContainerEl = document.querySelector("#repos-container");
+var repoSearchTerm = document.querySelector("#repo-search-term");
 
 var formSubmitHandler = function (event) {
   event.preventDefault();
@@ -12,29 +12,29 @@ var formSubmitHandler = function (event) {
   if (username) {
     getUserRepos(username);
 
-    repoContainerEl.textContent = '';
-    nameInputEl.value = '';
+    repoContainerEl.textContent = "";
+    nameInputEl.value = "";
   } else {
-    alert('Please enter a GitHub username');
+    alert("Please enter a GitHub username");
   }
 };
 
 var buttonClickHandler = function (event) {
   // What is `event.target` referencing?
-  // TODO: Write your answer here
-  var language = event.target.getAttribute('data-language');
+  // it's used to 'aim' at that particular element. This property gives us access to the properties of that element.
+  var language = event.target.getAttribute("data-language");
 
   // Why is this `if` block in place?
-  // TODO: Write your answer here
+  // Clears the input of the click handler. (clears text box when you click "search")
   if (language) {
     getFeaturedRepos(language);
 
-    repoContainerEl.textContent = '';
+    repoContainerEl.textContent = "";
   }
 };
 
 var getUserRepos = function (user) {
-  var apiUrl = 'https://api.github.com/users/' + user + '/repos';
+  var apiUrl = "https://api.github.com/users/" + user + "/repos";
 
   fetch(apiUrl)
     .then(function (response) {
@@ -45,18 +45,23 @@ var getUserRepos = function (user) {
           displayRepos(data, user);
         });
       } else {
-        alert('Error: ' + response.statusText);
+        alert("Error: " + response.statusText);
       }
     })
     .catch(function (error) {
-      alert('Unable to connect to GitHub');
+      alert("Unable to connect to GitHub");
     });
 };
 
 var getFeaturedRepos = function (language) {
   // What are the query parameters doing here?
-  // TODO: Write your answer here
-  var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
+  // q: Search-term
+  // Language: checks for featured language (HTML, CSS, JS, etc.. If it is featured in the parameter options)
+  // Sort: sorts by the value (help-wanted-issues)
+  var apiUrl =
+    "https://api.github.com/search/repositories?q=" +
+    language +
+    "+is:featured&sort=help-wanted-issues";
 
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
@@ -64,14 +69,14 @@ var getFeaturedRepos = function (language) {
         displayRepos(data.items, language);
       });
     } else {
-      alert('Error: ' + response.statusText);
+      alert("Error: " + response.statusText);
     }
   });
 };
 
 var displayRepos = function (repos, searchTerm) {
   if (repos.length === 0) {
-    repoContainerEl.textContent = 'No repositories found.';
+    repoContainerEl.textContent = "No repositories found.";
     // What would happen if there was no `return;` here?
     // TODO: Write your answer here
     return;
@@ -82,24 +87,27 @@ var displayRepos = function (repos, searchTerm) {
   for (var i = 0; i < repos.length; i++) {
     // What is the result of this string concatenation?
     // TODO: Write your answer here
-    var repoName = repos[i].owner.login + '/' + repos[i].name;
+    var repoName = repos[i].owner.login + "/" + repos[i].name;
 
-    var repoEl = document.createElement('div');
-    repoEl.classList = 'list-item flex-row justify-space-between align-center';
+    var repoEl = document.createElement("div");
+    repoEl.classList = "list-item flex-row justify-space-between align-center";
 
-    var titleEl = document.createElement('span');
+    var titleEl = document.createElement("span");
     titleEl.textContent = repoName;
 
     repoEl.appendChild(titleEl);
 
-    var statusEl = document.createElement('span');
-    statusEl.classList = 'flex-row align-center';
+    var statusEl = document.createElement("span");
+    statusEl.classList = "flex-row align-center";
 
     if (repos[i].open_issues_count > 0) {
       statusEl.innerHTML =
-        "<i class='fas fa-times status-icon icon-danger'></i>" + repos[i].open_issues_count + ' issue(s)';
+        "<i class='fas fa-times status-icon icon-danger'></i>" +
+        repos[i].open_issues_count +
+        " issue(s)";
     } else {
-      statusEl.innerHTML = "<i class='fas fa-check-square status-icon icon-success'></i>";
+      statusEl.innerHTML =
+        "<i class='fas fa-check-square status-icon icon-success'></i>";
     }
 
     repoEl.appendChild(statusEl);
@@ -108,5 +116,5 @@ var displayRepos = function (repos, searchTerm) {
   }
 };
 
-userFormEl.addEventListener('submit', formSubmitHandler);
-languageButtonsEl.addEventListener('click', buttonClickHandler);
+userFormEl.addEventListener("submit", formSubmitHandler);
+languageButtonsEl.addEventListener("click", buttonClickHandler);

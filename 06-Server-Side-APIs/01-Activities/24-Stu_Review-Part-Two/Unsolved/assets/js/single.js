@@ -4,7 +4,7 @@ var limitWarningEl = document.querySelector('#limit-warning');
 
 var getRepoName = function () {
   // Where is this value coming from?
-  // TODO: Write your answer here
+  // This is coming from the  URL
   var queryString = document.location.search;
   var repoName = queryString.split('=')[1];
 
@@ -14,7 +14,7 @@ var getRepoName = function () {
     getRepoIssues(repoName);
   } else {
     // Under what condition will this run?
-    // TODO: Write your answer here
+    // When query parameter is empty
     document.location.replace('./index.html');
   }
 };
