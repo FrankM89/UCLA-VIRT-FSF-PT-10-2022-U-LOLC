@@ -87,7 +87,13 @@ footer {
   color: #fff;
 }
 
-/* TODO: Add styles to display and hide the resource links */
+/* TODO: Add styles that will hide the resource links by default */
+
+
+
+/* TODO: Add styles that will display the links when the mouse hovers over the parent element */
+
+
 
 @media screen and (max-width: 768px) {
   header, main {
