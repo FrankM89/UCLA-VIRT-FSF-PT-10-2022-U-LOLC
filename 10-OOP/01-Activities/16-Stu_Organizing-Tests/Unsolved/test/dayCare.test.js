@@ -7,6 +7,7 @@ describe("DayCare", () => {
       const dayCare = new DayCare();
 
       // TODO: Add a comment describing the purpose of the following statement
+      // Verify that the new object has the correct properties
       expect(dayCare).toEqual({ children: [], capacity: 3, ageLimit: 6 });
     });
   });
@@ -14,13 +15,16 @@ describe("DayCare", () => {
   describe("addChild", () => {
     it("should add a child to the 'children' array", () => {
       // TODO: Add a comment describing the purpose of the following declarations
+      // Create new objects to test with
       const child = new Child("Tammy", 1);
       const dayCare = new DayCare();
 
       // TODO: Add a comment describing the purpose of the following method
+      // Adding the child object to the daycare object
       dayCare.addChild(child);
 
       // TODO: Add a comment describing the purpose of the following statements
+      // Verify that tha child was added to the array
       expect(dayCare.children.length).toEqual(1);
       expect(dayCare.children[0]).toBe(child);
     });
