@@ -11,9 +11,11 @@ const sortHelper = (type) =>
   termData.sort(sortData('term', 'relevance', `${type}`));
 
 // TODO: Add a comment describing the functionality of this route
+// GET route to get all of the terms
 
 app.get('/api/terms/', (req, res) => {
   // TODO: Add a comment describing the req.query object
+  // Requesting query strings in api/terms. The amount of objects in api/terms
 
   const hasQuery = Object.keys(req.query).length > 0;
 
@@ -30,9 +32,11 @@ app.get('/api/terms/', (req, res) => {
 });
 
 // TODO: Add a comment describing what this route will return
+// Returns def or url from term, based off term input
 
 app.get('/api/term/:term', (req, res) => {
   // TODO: Add a comment describing the content of req.params in this instance
+  // 
 
   const requestedTerm = req.params.term.toLowerCase();
 
@@ -46,7 +50,8 @@ app.get('/api/term/:term', (req, res) => {
   return res.json('No term found');
 });
 
-// TODO: Add a comment describing what this route will return
+// TODO: Add a comment describing what this route will return\
+// Returns categories from the term/data array
 
 app.get('/api/terms/:category', (req, res) => {
   const requestedCategory = req.params.category.toLowerCase();
@@ -62,6 +67,7 @@ app.get('/api/terms/:category', (req, res) => {
 });
 
 // TODO: Add a comment describing what this route will return
+// Returns all categories
 
 app.get('/api/categories', (req, res) => {
   const categories = termData.map((term) => term.category);

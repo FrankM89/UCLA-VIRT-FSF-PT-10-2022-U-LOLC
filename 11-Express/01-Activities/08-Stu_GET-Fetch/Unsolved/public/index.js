@@ -2,10 +2,7 @@ const petEl = document.getElementById('pets');
 const termButton = document.getElementById('term-btn');
 
 const getPets = () =>
-  fetch('/api/terms', {
-    method: 'POST',
-    body: '',
-  })
+  fetch('/api/pets')
     .then((res) => res.json())
     .then((data) => data);
 
