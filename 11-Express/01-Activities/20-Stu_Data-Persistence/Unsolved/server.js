@@ -44,9 +44,21 @@ app.post('/api/reviews', (req, res) => {
       review_id: uuid(),
     };
 
-    // Convert the data to a string so we can save it
-    const reviewString = JSON.stringify(newReview);
+    let parsedReviews = [];
+    // Read the existing reviews in
+    fs.readFile('./db/reviews.json', 'utf8', (err, data) => {
+      const reviewString = JSON.stringify(newReview);
 
+      if(err) {
+        console.error(err);
+      } else {
+        parsedReviews = JSON.parse(data);
+        parsedReviews.push(newReview);
+      }
+    });
+
+    // Convert the data to a string so we can save it
+    
     // Write the string to a file
     fs.writeFile(`./db/reviews.json`, reviewString, (err) =>
       err

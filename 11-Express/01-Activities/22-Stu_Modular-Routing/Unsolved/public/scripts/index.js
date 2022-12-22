@@ -1,5 +1,6 @@
 const tipForm = document.getElementById('tip-form');
 const tipsContainer = document.getElementById('tip-container');
+const router = express.Router();
 
 const createCard = (tip) => {
   // Create card

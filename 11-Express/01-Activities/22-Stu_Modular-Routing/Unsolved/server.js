@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
+const routes = require('routes');
 
 // Helper method for generating unique ids
 const uuid = require('./helpers/uuid');

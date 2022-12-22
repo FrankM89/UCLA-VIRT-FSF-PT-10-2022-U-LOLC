@@ -4,14 +4,17 @@ const reviewInput = document.getElementById('review');
 const reviewForm = document.getElementById('review-form');
 
 // TODO: Add a comment explaining the functionality of this helper function
+// Accepts a 'review' object, sends a POST request and returns the result
 const postReview = (review) =>
   // TODO: Add a comment explaining what sort of data we need to provide when invoking the fetch function for a POST request
+  // Fetch accepts a URL and an options where you can
   fetch('/api/reviews', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     // TODO: Add a comment describing why one would need to convert the JSON object to a string in this instance
+    //
     body: JSON.stringify(review),
   })
     .then((res) => res.json())

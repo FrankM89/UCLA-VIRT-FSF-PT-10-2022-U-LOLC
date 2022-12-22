@@ -47,9 +47,11 @@ app.post('/api/reviews', (req, res) => {
   console.info(`${req.method} request received to add a review`);
 
   // TODO: Add a comment describing the functionality of following line of code:
+  // Parameters of the class
   const { product, review, username } = req.body;
 
   // TODO: Add a comment describing why we would check to see if the following properties exist before entering the code block
+  // To check if all the parameters are met and put in the right place
   if (product && review && username) {
     // Variable for the object we will save
     const newReview = {
@@ -68,9 +70,11 @@ app.post('/api/reviews', (req, res) => {
     console.log(response);
 
     // TODO: Add a comment explaining the functionality of res.json()
+    // Checking to see if the json file can respond
     res.status(201).json(response);
   } else {
     // TODO: Add a comment describing the purpose of the else statement in this POST request.
+    // Passing error if the json file doesn't respond
     res.status(500).json('Error in posting review');
   }
 });
