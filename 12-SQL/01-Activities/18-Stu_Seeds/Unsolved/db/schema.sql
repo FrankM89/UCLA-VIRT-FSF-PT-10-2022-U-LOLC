@@ -8,3 +8,7 @@ CREATE TABLE products(
   product_name VARCHAR(30) NOT NULL,
   category_name VARCHAR(30) NOT NULL
 );
+
+
+ALTER TABLE products
+ADD is_healthy BOOLEAN;
