@@ -21,7 +21,13 @@ var unixFormat = dayjs.unix(1318781876).format('MMM D, YYYY, hh:mm:ss a');
 $('#5a').text(unixFormat);
 
 // 6. What is the difference in days between May 4, 2027 and today?
+
+// dayjs object for May 4, 2027
 var targetDay = dayjs('2027-05-04');
+
+// dayjs object for today
 var today = dayjs();
-var days = targetDay.diff(today, 'day');
+
+// number of days between targetDay and today
+var days = targetDay.diff(today, 'days');
 $('#6a').text(days);
