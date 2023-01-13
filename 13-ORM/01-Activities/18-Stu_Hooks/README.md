@@ -12,7 +12,7 @@ Work with a partner to implement the following user story:
 
 * It's done when `User.init()` includes Hooks to hash the user's password before it is created.
 
- * It's done when `User.init()` includes Hooks to hash the user's password before it is updated, only if a password is provided in the payload.
+ * It's done when `User.init()` includes Hooks to hash the user's password before it is updated.
 
 ## 💡 Hints
 
