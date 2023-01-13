@@ -1,10 +1,15 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const e = require('express');
 
 class User extends Model {
   checkPassword(userPassword) {
     // TODO: Complete the instance method
+    return bcrypt.compare(
+      userPassword,
+      this.password
+    );
   }
 }
 

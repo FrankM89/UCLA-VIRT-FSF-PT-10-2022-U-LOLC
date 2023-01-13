@@ -6,6 +6,7 @@ router.get('/', async (req, res) => {
   try {
     const readerData = await Reader.findAll({
       // TODO: Add a comment describing the functionality of this property
+      // Includes the all objects for finding all information (in this case, library cards)
       include: [{ model: LibraryCard }],
     });
     res.status(200).json(readerData);
