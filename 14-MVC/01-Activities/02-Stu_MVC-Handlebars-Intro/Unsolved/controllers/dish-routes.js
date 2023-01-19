@@ -3,8 +3,10 @@
 const router = require('express').Router();
 
 // TODO: Add a comment describing the purpose of the get route
+// Gets the response from the server for that particular route
 router.get('/', async (req, res) => {
 //TODO: Add a comment describing the purpose of the render method
+// To display the specified HTML code inside the specified HTML element
   res.render('all');
 });
 
