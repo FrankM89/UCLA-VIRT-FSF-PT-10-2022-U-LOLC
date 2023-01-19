@@ -18,4 +18,4 @@ Open [Unsolved/vowel-count.js](Unsolved/vowel-count.js) in your code editor&mdas
 
 ---
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

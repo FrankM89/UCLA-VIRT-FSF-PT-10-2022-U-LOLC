@@ -35,4 +35,4 @@ If you have completed the activity and want to further your knowledge, work thro
 * What are some ways Chrome DevTools can demystify the CSS powering the grid? Use [Google](https://www.google.com) or another search engine to research this question.
 
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

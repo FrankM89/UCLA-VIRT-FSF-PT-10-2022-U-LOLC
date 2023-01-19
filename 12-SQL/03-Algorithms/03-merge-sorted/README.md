@@ -47,4 +47,4 @@ In this activity you will be writing code to create a function that takes in two
   * Functions that fail the tests will be denoted with a red X and an error message.
   
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

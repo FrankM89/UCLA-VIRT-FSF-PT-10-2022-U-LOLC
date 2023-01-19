@@ -46,4 +46,4 @@ There are a variety of ways to solve this problem, but try the same technique th
 
 ---
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

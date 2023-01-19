@@ -138,4 +138,4 @@ git cherry-pick f18756a -n
 Today we created a small repo and simulated collaboration with a coworker or teammate. We used `git cherry-pick` to bring in a single commit to a branch without needing to pull in everything. This is a super useful feature of Git and is just one more tool to add to your Git toolbox!
 
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

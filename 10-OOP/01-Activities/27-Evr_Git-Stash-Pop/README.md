@@ -107,4 +107,4 @@ Nice work! You've used the `git stash` command to set aside some untracked files
 
 ---
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

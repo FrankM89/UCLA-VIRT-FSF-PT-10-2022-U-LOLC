@@ -29,4 +29,4 @@ Open [Unsolved/double-triple-map.js](Unsolved/double-triple-map.js) in your code
   * Functions that FAIL the tests will be denoted with a red X and an error message.
 
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

@@ -37,4 +37,4 @@ In OAuth 2.0, the following three parties are involved: The user, who possesses 
 Use [Google](https://www.google.com) or another search engine to research this.
 
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

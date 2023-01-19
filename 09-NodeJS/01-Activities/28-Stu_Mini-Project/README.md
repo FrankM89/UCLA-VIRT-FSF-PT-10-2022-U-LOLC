@@ -26,4 +26,4 @@ It might be a good idea to start building out the HTML skeleton in a real HTML f
 
 ---
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
