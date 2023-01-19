@@ -41,4 +41,4 @@ In this activity you will be writing code to create a function that takes in a w
 If you aren't allowed to check the square root of the given number, can you check whether the [square of the number](http://www.math.com/school/subject1/lessons/S1U1L9GL.html) is the given number?
 
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

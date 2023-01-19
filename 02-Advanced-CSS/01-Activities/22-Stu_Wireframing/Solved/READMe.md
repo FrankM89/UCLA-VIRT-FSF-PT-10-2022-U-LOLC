@@ -18,4 +18,4 @@
 
 ![Finished wireframe of the Module 02 mini-project](./assets/Images/01-wireframe-form-completed.png)
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

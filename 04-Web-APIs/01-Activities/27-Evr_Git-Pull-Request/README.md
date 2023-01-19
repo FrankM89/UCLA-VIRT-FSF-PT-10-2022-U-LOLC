@@ -147,4 +147,4 @@ Ask an instructor or TA if you get stuck or have any questions!
 For more help, see the [Atlassian guide on Git pull requests](https://www.atlassian.com/git/tutorials/making-a-pull-request).
 
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

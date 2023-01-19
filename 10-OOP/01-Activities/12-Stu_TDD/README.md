@@ -36,4 +36,4 @@ Use [Google](https://www.google.com) or another search engine to research this.
 
 ---
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

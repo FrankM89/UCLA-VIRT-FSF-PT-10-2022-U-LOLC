@@ -36,4 +36,4 @@ In this activity you will be writing code to create a function that takes in a t
 Refer to this [JavaScript Tutorial page on multi-dimensional arrays in JavaScript](http://www.javascripttutorial.net/javascript-multidimensional-array/).
 
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

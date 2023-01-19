@@ -45,4 +45,4 @@ Open [Unsolved/array-intersection.js](Unsolved/array-intersection.js) in your co
   * Functions that FAIL the tests will be denoted with a red X and an error message.
 
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

@@ -43,4 +43,4 @@ If you have completed the activity and want to further your knowledge, work thro
 * How did Bootstrap come to be, and how are CSS frameworks like it useful for developers? Use [Google](https://www.google.com) or another search engine to research this question.
 
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

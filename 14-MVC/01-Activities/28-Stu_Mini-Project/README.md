@@ -93,4 +93,4 @@ If you have completed this activity, work through the following challenge with y
 * Add an `/edit/:id` route for logged in users to update their projects' details. Then deploy the app to Heroku!
 
 ---
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
