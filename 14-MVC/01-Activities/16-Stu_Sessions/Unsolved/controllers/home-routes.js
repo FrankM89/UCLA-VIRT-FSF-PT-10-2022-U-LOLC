@@ -17,6 +17,12 @@ router.get('/', async (req, res) => {
       gallery.get({ plain: true })
     );
     // TODO: Send over the 'loggedIn' session variable to the 'homepage' template
+    req.session.save(() => {
+      if (req.session.loggedIn) {
+      } else {
+        req.session.login;
+      }
+    })
     res.render('homepage', {
       galleries,
     });

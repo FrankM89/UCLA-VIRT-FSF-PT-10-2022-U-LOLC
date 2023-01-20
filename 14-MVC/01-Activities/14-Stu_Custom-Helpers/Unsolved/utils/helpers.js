@@ -4,4 +4,20 @@ module.exports = {
   },
   // TODO: Create a custom helper 'format_date' that takes in a timestamp,
   // adds five years to the date, and formats it as M/D/YYYY
+
+format_date: (date) => {
+  return `${new Date(date).getMonth() +1}/${new Date(date).getDate()}/${new Date(date).getFullYear() + 5}`
+}
 };
+
+
+
+
+// format_date: (timestamp) => {
+//   let date = new Date(timestamp);
+//   date.setFullYear(date.getFullYear() + 5);
+//   let month = date.getMonth() + 1;
+//   let day = date.getDate();
+//   let year = date.getFullYear();
+//   return `${month}/${day}/${year}`;
+// }

@@ -17,14 +17,19 @@ const PORT = process.env.PORT || 3001;
 const sess = {
   secret: 'Super secret secret',
   // TODO: Add a comment describing the purpose of adding a cookies object to our options to our session object
+  // Allow websites to remember users within a website when they move between web pages
   cookie: {
     // TODO: Add a comment describing the functionality of the maxAge attribute
+    // Indicates the maximum lifetime of the cookie
     maxAge: 60 * 60 * 1000,
     // TODO: Add a comment describing the functionality of the httpOnly attribute
+    // Prevent access to cookie values via JavaScript
     httpOnly: true,
     // TODO: Add a comment describing the functionality of the secure attribute
+    // To prevent cookies from being observed by unauthorized parties due to the transmission of the cookie in clear text
     secure: false,
     // TODO: Add a comment describing the functionality of the sameSite attribute
+    // Allows you to declare if your cookie should be restricted to a first-party or same-site context
     sameSite: 'strict',
   },
   resave: false,
