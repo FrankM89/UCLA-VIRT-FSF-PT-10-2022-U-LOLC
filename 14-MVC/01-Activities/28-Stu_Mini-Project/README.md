@@ -42,7 +42,7 @@ In this mini-project, you will work with a group to build a full-stack crowdfund
 
 * It's done when the views are rendered with Handlebars.js templates.
 
-## Specifications 
+## Specifications
 
 * The database models have the following fields and associations:
 
