@@ -15,12 +15,13 @@
   background-color: var(--teal);
 }
 
-.custom-navbar a {
+/* Sometimes, custom CSS classes may need to be used with descendant selectors to achieve the correct specificity to override existing Bootstrap styles. */
+.custom-navbar .navbar-nav .custom-nav-link {
   font-size: 1.5rem;
   color: var(--lightteal);
 }
 
-.custom-navbar a:hover {
+.custom-navbar .navbar-nav .custom-nav-link:hover {
   color: var(--light);
 }
 
