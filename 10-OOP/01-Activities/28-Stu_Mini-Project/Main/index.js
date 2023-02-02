@@ -1,7 +1,5 @@
-const Game = require("./lib/Game");
+const CLI = require('./lib/cli.js');
 
-// Initialize a new Game object
-const game = new Game();
+const cli = new CLI();
 
-// Start playing
-game.play();
+cli.run();

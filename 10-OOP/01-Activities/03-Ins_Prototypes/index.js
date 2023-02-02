@@ -1,27 +1,15 @@
-// Array.prototype.forEach()
-const myArray = [2, 4, 6, 8];
-
-myArray.forEach((num) => console.log(num));
-
-// String.prototype.toLowerCase()
-const person = {
-  name: 'Eric',
-  age: 28,
-  occupation: 'Full-Stack Web Developer',
-};
-
-console.log(person.occupation.toLowerCase());
-
 // Prototype methods on constructor function
-function Movie(title, releaseYear) {
-  this.title = title;
-  this.releaseYear = releaseYear;
+
+function Dog(name, age, breed) {
+  this.name = name;
+  this.age = age;
+  this.breed = breed;
 }
 
-const superman = new Movie('Superman', 1978);
-
-Movie.prototype.logInfo = function () {
-  console.log(`${this.title} was released in ${this.releaseYear}`);
+Dog.prototype.nap = function () {
+  console.log('Zzzzzzzzz');
 };
 
-superman.logInfo();
+const dog = new Dog('Rex', 2, 'Bulldog');
+
+dog.nap();
