@@ -6,21 +6,21 @@ Work with a partner to implement the following user story:
 
 ## Acceptance Criteria
 
-* It's done when the constructor function is named `Developer()` and it takes in two parameters, `name` and `tech`.
+* It's done when the constructor function is named `BlogPost()` and takes in four parameters, `authorName`, `title`, `text`, and `createdOn` (this should be a date).
 
 * It's done when the parameters are passed into the object's keys as their values.
 
-* It's done when the object's third key is a method called `introduction()` that prints a message in the console, introducing a developer's `name` and what `tech` they like.
+* It's done when the object's fifth key is a method called `printMetaData()` that prints a message in the console saying `Created by (authorName) on (createdOn)`.
 
-* It's done when I create a new object using the `Developer()` constructor with a `name` and `tech` of my choice.
+* It's done when I create a new object using the `BlogPost()` constructor with my own custom values.
 
-* It's done when the introduction of my new object is printed in the console.
+* It's done when the meta data is printed to the console.
 
 ---
 
 ## 💡 Hints
 
-How can we use template literals to print an introduction like "Hi, my name is Rita and I love JavaScript"?
+How can we use template literals to print an introduction like "Created by John Doe on December 5th, 2022"?
 
 ## 🏆 Bonus
 

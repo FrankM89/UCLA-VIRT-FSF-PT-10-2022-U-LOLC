@@ -1,7 +1,7 @@
-// TODO: Create a constructor function called 'Developer' that takes in 'name' and 'tech'
+// TODO: Create a constructor function called 'BlogPost' that takes in 'authorName', 'title', 'text, and 'createdOn'
 
-// TODO: Include a method called 'introduction()' that introduces the Developer with their name and favorite tech
+// TODO: Include a method called 'printMetaData()' that prints a message in the console saying 'Created by (authorName) on (createdOn)'
 
-// TODO: Create a new object using the 'Developer' constructor
+// TODO: Create a new object using the 'BlogPost' constructor
 
-// TODO: Call the 'introduction()' method on the new object
+// TODO: Call the 'printMetaData()' method on the new object

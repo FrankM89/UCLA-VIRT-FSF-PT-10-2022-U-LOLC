@@ -2,7 +2,7 @@
 
 Work with a partner to resolve the following issues:
 
-* As a user, I want to view all products in two or more rows.
+* As a user, when products don't fit within one row, I want to see them displayed in two or more rows.
 
 * As a user, I don't want to scroll horizontally to see additional products.
 
