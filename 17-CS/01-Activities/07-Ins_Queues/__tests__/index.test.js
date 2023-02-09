@@ -21,7 +21,7 @@ describe('Queue class', () => {
   });
 
   test('Can remove an item from the beginning of the queue', () => {
-    queue.removeFromQueue(newItem);
+    queue.removeFromQueue();
     expect(queue).toEqual( { "container": [2, 3, 4, 5] } );
   });
 });
