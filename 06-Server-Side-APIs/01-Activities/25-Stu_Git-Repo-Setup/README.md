@@ -40,23 +40,23 @@ When you work alone on a project, it's a safe assumption that any code that is p
 
   ![The GitHub repository's settings page shows options to set for the repo](./Images/01-repo-settings.png)
 
-* Once there, look in the left column's menu and select the Branches option. Then find the Add Rule button in the main content on the right, and select it. See the following image for reference:
+* Once there, look in the left column's menu and select the Branches option. Then find the "Add Branch Protection Rule" button under "Branch protection rules" in the main content on the right, and select it. See the following image for reference:
 
   ![The branch settings page in the repository shows a button to add a rule to a branch](./Images/02-branch-rules.png)
 
-* After you select Add Rule, a page titled "Branch protection rule" will appear. On this page, we'll set up the repository so that no code can be pushed to the `main` branch by any member of the developer team. All code that is to be merged into the `main` branch MUST be merged through a GitHub pull request. Let's add the following to this page:
+* After you select "Add branch protection rule," a page titled "Branch protection rule" will appear. On this page, we'll set up the repository so that no code can be pushed to the `main` branch by any member of the developer team. All code that is to be merged into the `main` branch MUST be merged through a GitHub pull request. Let's add the following to this page:
 
   * For the "Branch name pattern" input field, enter the branch `main`.
 
-  * Next, check the box next to the option for "Require pull request reviews before merging". It will open another set of options asking if we want multiple reviewers before allowing a pull request to be merged, but we can leave it at just one for now.
+  * Next, check the box next to the option for "Require a pull request before merging." It will open another option called "Require Approvals" that is enabled by default. Leave this option enabled. The dropdown menu below this option allows you to select the number of approvals before merging a pull request is allowed. We can leave this at one for now.
 
-  * Finally, select the option to "Include administrators". This way, even the repository owner cannot push to `main` and has to follow all of the same rules as the rest of the developers.
+  * Finally, select the option "Do not allow bypassing the above settings." This way, even the repository owner cannot push to `main` and has to follow all of the same rules as the rest of the developers.
 
   * Confirm that the correct rules are in place by comparing with the following image: 
 
     ![The branch protection rule page shows all of the options in place to protect the main branch.](./Images/03-branch-rules-done.png)
 
-  * Make sure to select the Create button at the bottom of the page. The page will refresh and inform us that the rules have been created.
+  * Make sure to click the Create button at the bottom of the page. The page will refresh and inform us that the rules have been created.
 
 * Great! Now the repository's `main` branch cannot have code added to it without a pull request, and that pull request must be reviewed and approved by at least one other developer on the project. Let's go add those other developers now!
 
@@ -66,15 +66,15 @@ When you work alone on a project, it's a safe assumption that any code that is p
 
 GitHub allows developers to work together and contribute to a single repository in a few different ways. We will set up the repository so that certain other GitHub users can write data and read data to it. Let's go add these collaborators with the following steps:
 
-* In the GitHub repository's Settings page, select Manage Access from the menu on the left side. You should see the following image:
+* In the GitHub repository's Settings page, select "Collaborators" from the menu on the left side. You should see the following image:
 
   ![The GitHub repository's settings page shows who has access to read or write to the repository and the option to invite collaborators.](./Images/04-manage-access.png)
 
-* Once the modal dialog opens, start typing in the GitHub username of one of your collaborators, and the list should automatically populate that user's entry. The page should resemble the following image:
+* Click the "Add people" button. Once the modal dialog opens, start typing in the GitHub username of one of your collaborators, and the list should automatically populate that user's entry. The page should resemble the following image:
 
   ![The invite a collaborator modal dialog shows the user that needs to be invited to the repo.](./Images/05-invite-collaborator.png)
 
-* Select the entry and click the "Add `<github-username>` to `<project-repo-name>`" button. The updated Manage Access page should look like the following image:
+* Select the entry and click the "Add `<github-username>` to this repository" button. The updated Manage Access page should look like the following image:
 
   ![The manage access page shows there is a pending invitation for a collaborator.](./Images/06-pending-invite.png)
 
