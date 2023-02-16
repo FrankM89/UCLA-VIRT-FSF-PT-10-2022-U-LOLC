@@ -1,4 +1,4 @@
-# 🐛 Submit Button on Form Returns 404 Error
+# 🐛 Submit Button on Form Refreshes Page
 
 Work with a partner to resolve the following issues:
 
@@ -10,7 +10,7 @@ When a user enters numbers in the text fields and clicks on the Calculate Tip bu
 
 ## Actual Behavior
 
-When a user clicks on the Calculate Tip button, a 404 error appears. 
+When a user clicks on the Calculate Tip button, the page refreshes without updating content on the screen.
 
 ## Assets
 
