@@ -20,6 +20,9 @@ If you have completed this activity, work through the following challenge with y
 
 * What is **atomicity** within the context of databases? Why is it important to understand when performing write operations with MongoDB?
 
+<!-- Atomicity means that multiple operations can be grouped into a single logical entity, that is, other threads of control
+ accessing the database will either see all of the changes or none of the changes. -->
+
 Use [Google](https://www.google.com) or another search engine to research this.
 
 ---

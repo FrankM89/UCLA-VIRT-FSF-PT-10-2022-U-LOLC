@@ -2,7 +2,7 @@ const express = require('express');
 const mongodb = require('mongodb').MongoClient;
 
 const app = express();
-const port = 3001;
+const port = 3003;
 
 const connectionStringURI = `mongodb://127.0.0.1:27017/numbersDB`;
 
@@ -48,6 +48,9 @@ app.use(express.json());
 app.get('/read', (req, res) => {
   db.collection('numberList')
     .find()
+    .sort( { number: -1 })
+    .limit(5)
+    .skip(5)
     .toArray((err, results) => {
       if (err) throw err;
       res.send(results);

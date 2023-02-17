@@ -7,7 +7,7 @@ const data = [
     promotion_id: 'flowers', // refers to the promotion object below
   },
   {
-    promotion_id: 'flowers',
+    promotion_id: 'flowers',     // SAME AS FOREIGN_ID IN SQL \\
     sale: 'discount on red flowers',
     percentage_discount: 50,
   },

@@ -43,3 +43,6 @@ app.get('/sale-over-30', (req, res) => {
       res.send(results);
     });
 });
+
+// $gte greater than or equal to
+// $lt/lte less than or equal to

@@ -2,7 +2,7 @@ const express = require('express');
 const mongodb = require('mongodb').MongoClient;
 
 const app = express();
-const port = 3001;
+const port = 3002;
 
 const connectionStringURI = `mongodb://127.0.0.1:27017/authorListDB`;
 
@@ -61,7 +61,7 @@ app.use(express.json());
 
 app.get('/price-less-than-10', (req, res) => {
   db.collection('authorList')
-    .find({ data: { $lt: 10 } })
+    .find({ 'information.price': { $lt: 10 } })
     .toArray((err, results) => {
       if (err) throw err;
       res.send(results);
@@ -70,7 +70,7 @@ app.get('/price-less-than-10', (req, res) => {
 
 app.get('/featured-authors', (req, res) => {
   db.collection('authorList')
-    .find({ featured: true })
+    .find({ 'authors.featured': true })
     .toArray((err, results) => {
       if (err) throw err;
       res.send(results);
