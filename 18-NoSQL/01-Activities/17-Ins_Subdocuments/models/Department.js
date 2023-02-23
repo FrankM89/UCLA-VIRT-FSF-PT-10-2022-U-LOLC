@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // Child documents or subdocuments can be embedded into a parent document
 // the managerSchema defines the shape for manager subdocument
@@ -24,17 +24,17 @@ const departmentSchema = new mongoose.Schema({
 });
 
 // Uses mongoose.model() to create model
-const Department = mongoose.model('Department', departmentSchema);
+const Department = mongoose.model("Department", departmentSchema);
 
 // Uses model to create new instance including subdocument
-const managerData = { name: 'Taylor', salary: 80000 };
+const managerData = { name: "Taylor", salary: 80000 };
 const employeeData = [
-  { name: 'Ann', salary: 40000 },
-  { name: 'Liu', salary: 50000 },
+  { name: "Ann", salary: 40000 },
+  { name: "Liu", salary: 50000 },
 ];
 
 Department.create(
-  { name: 'Shoes', manager: managerData, employees: employeeData },
+  { name: "Shoes", manager: managerData, employees: employeeData },
   (err, data) => {
     if (err) {
       console.error(err);

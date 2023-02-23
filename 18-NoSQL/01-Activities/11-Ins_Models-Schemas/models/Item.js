@@ -15,7 +15,7 @@ const itemsSchema = new mongoose.Schema({
 
 // Using mongoose.model() to compile a model based on the schema
 // 'Item' is the name of the model
-// grocerySchema is the name of the schema we are using to create a new instance of the model
+// itemsSchema is the name of the schema we are using to create a new instance of the model
 const Item = mongoose.model('Item', itemsSchema);
 
 // Error handler function to be called when an error occurs when trying to save a document
