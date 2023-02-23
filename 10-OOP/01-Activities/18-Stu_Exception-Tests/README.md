@@ -12,7 +12,7 @@ Work with a partner to implement the following user story:
 
 ## 📝 Notes
 
-A valid author is a string with at least 3 characters and no more than 15 that
+A valid author is a string with at least 2 characters and no more than 15 that
 begins with a letter and contains only letters, numbers, dashes, and underscores.
 (`-`, `_`)
 
