@@ -1,0 +1,4109 @@
+<body>
+  <input type="hidden" id="DepartmentName" name="DepartmentName" />
+  <input type="hidden" id="DepartmentId" name="DepartmentId" />
+  <input type="hidden" name="DocumentContact" id="DocumentContact" />
+  <input type="hidden" name="DocumentContactHolder" id="DocumentContactHolder" />
+  <input type="hidden" name="CouncilDistrictNumber" id="CouncilDistrictNumber" />
+  <input type="hidden" name="CouncilDistrictNumberHolder" id="CouncilDistrictNumberHolder" />
+  <input type="hidden" name="WFStep" id="WFStep" />
+  <input type="hidden" name="DepartmentApprover" id="DepartmentApprover" />
+  <input type="hidden" name="IndexApprover" id="IndexApprover" />
+  <input type="hidden" name="ReferralClerk" id="ReferralClerk" />
+  <input type="hidden" name="Calendar" id="Calendar" />
+  <input type="hidden" name="LegislativeAssistants" id="LegislativeAssistants" />
+  <input type="hidden" name="ItemTypeHolder" id="ItemTypeHolder" />
+  <input type="hidden" name="ItemType" id="ItemType" />
+  <input type="hidden" name="movers" id="movers" />
+  <input type="hidden" name="seconders" id="seconders" />
+  <input type="hidden" name="committees" id="committees" />
+  <input type="hidden" name="committeesHolder" id="committeesHolder" />
+  <input type="hidden" name="meetingDates" id="meetingDates" />
+  <input type="hidden" name="AddressIncluded_CheckboxValue" id="AddressIncluded_CheckboxValue" />
+  <input type="hidden" name="TimeLimit_CheckboxValue" id="TimeLimit_CheckboxValue" />
+  <input type="hidden" name="OrdinanceIncluded_CheckboxValue" id="OrdinanceIncluded_CheckboxValue" />
+  <input type="hidden" name="CheckboxHolder" id="CheckboxHolder" />
+  <input type="hidden" name="completedCommittees" id="completedCommittees" />
+  <input type="hidden" name="LAEmails" id="LAEmails" />
+  <input type="hidden" name="CalendarEmails" id="CalendarEmails" />
+  <input type="hidden" name="CouncilFileNo" id="CouncilFileNo" />
+  <input type="hidden" name="CouncilFileNumber" id="CouncilFileNumber" />
+  <input type="hidden" name="CreatedDate" id="CreatedDate" />
+  <input type="hidden" name="ReferredDate" id="ReferredDate" />
+  <input type="hidden" name="ReferredTo" id="ReferredTo" />
+  <input type="hidden" name="ReferralDateSearch" id="ReferralDateSearch" />
+  <input type="hidden" id="PursuantToHolder" name="PursuantToHolder" />
+  <input type="hidden" id="PursuantTo" name="PursuantTo" />
+  <input type="hidden" id="NewOrExistingCouncilFile" name="NewOrExistingCouncilFile" />
+  <input type="hidden" id="SystemItem" name="SystemItem" />
+  <input type="hidden" id="AttachmentsAdded" name="AttachmentsAdded" />
+  <input type="hidden" id="TimeLimitPursuantTo" name="TimeLimitPursuantTo" />
+  <input type="hidden" id="DepartmentApproverEmails" name="DepartmentApproverEmails" />
+  <input type="hidden" id="Rejected" name="Rejected" />
+  <input type="hidden" id="CurrentStatus" name="CurrentStatus" />
+  <input type="hidden" id="referredToHolder" name="referredToHolder" />
+  <input type="hidden" id="CEQA" name="CEQA" />
+  <input type="hidden" id="CEQAHolder" name="CEQAHolder" />
+  <input type="hidden" id="CEQACheckHolder" name="CEQACheckHolder" />
+  <input type="hidden" id="indexerEmails" name="indexerEmails" />
+  <input type="hidden" id="departmentLAEmails" name="departmentLAEmails" value="test@test.com" />
+  <input type="hidden" id="originatorEmail" name="originatorEmail" />
+  <input type="hidden" id="TimeLimitSelectHolder" name="TimeLimitSelectHolder" />
+  <input type="hidden" id="currentStatusNotificationHolder" name="currentStatusNotificationHolder" />
+  <input type="hidden" id="NumberOfDaysHolder" name="NumberOfDaysHolder" />
+  <input type="hidden" id="LastDayHolder" name="LastDayHolder" />
+  <input type="hidden" id="existingMovers" name="existingMovers" />
+  <input type="hidden" id="existingSeconders" name="existingSeconders" />
+
+  <legend class="legends" style="font-size: 26pt; margin-top: 0px !important; margin-bottom: 2em !important;">
+    <div class="rows" style="width: 100%; text-align: left; padding-bottom: .2em;">
+      <div style="display: inline; padding-right: 25pt;">
+        <img src="../../content/images/default/lacitylogo.jpg" />
+      </div>
+
+      <div style="display: inline; vertical-align: middle;">
+        SUBMITTAL FORM
+      </div>
+    </div>
+  </legend>
+
+  <div class="row" style="padding-bottom:1.5em">
+    <div class="col-sm-6">
+      <label for="CurrentDate">Date:</label>
+      <input type="text" class="formControlTextDate" id="CurrentDate" name="CurrentDate" readonly />
+    </div>
+    <div class="col-sm-6">
+      <label for="Department">Department:<span class="requiredStar">*</span></label>
+
+      <input type="text" class="formControlTextDate requiredTextDate" data-class="requiredTextDate" id="Department"
+        name="Department" readonly />
+    </div>
+
+  </div>
+
+
+
+  <div class="row" style="padding-bottom:1.5em">
+    <div class="col-sm-6">
+      <label for="systemItemTypeId">Item Type:<span class="requiredStar">*</span></label>
+      <select onchange="populateItemTypeInformation();" class="formControlSelect requiredSelect"
+        data-class="requiredSelect" id="systemItemTypeId" name="systemItemTypeId"></select>
+    </div>
+
+    <div class="col-sm-6">
+      <div>
+        <label for="CouncilFile">Council File Number:</label>
+
+        <i data-toggle="popover" data-animation="true" data-html="true" data-trigger="hover" title="Council File Number"
+          data-content="Please include a Council file number if it is known. If not, leave this field blank. <span style='color: red; font-weight: bold;'>Note: one submission per Council file.</span>"
+          class="glyphicon glyphicon-info-sign" aria-hidden="true"></i>
+
+        <input class="hideme" style="display: inline-block; margin-left: 10pt;" type="radio" id="NewCouncilFile"
+          name="NewExistingCouncilFile" onchange="newOrExistingCouncilFile('New')">
+        <label class="hideme" id="NewCouncilFileLabel" for="NewCouncilFile" style="padding-left: 4pt;">New</label>
+        </input>
+
+        <input class="hideme" style="display: inline-block; margin-left: 5pt;" type="radio" id="ExistingCouncilFile"
+          name="NewExistingCouncilFile" onchange="newOrExistingCouncilFile('Existing')">
+        <label class="hideme" id="ExistingCouncilFileLabel" for="ExistingCouncilFile"
+          style="padding-left: 4pt;">Existing</label>
+        </input>
+      </div>
+
+      <div>
+        <input class="formControlText" style="margin-right: 15px; display: inline-block;" name="CouncilFile"
+          id="CouncilFile" onblur="populateOtherCouncilFileHolders(this.value)" placeholder="Council File Number" />
+
+        <div id="searchItems" name="searchItems" style="vertical-align: top;"
+          class="hideme NewSearchButton btn btn-primary advancedSearch__fields--button" title="Search Items">
+          <span class="glyphicon glyphicon-search"></span>
+
+          Search Items
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row" style="padding-bottom:1.5em">
+    <div class="col-sm-12 col-md-6">
+      <label for="CouncilDistrictNumberSelect">Council District Number</label>
+      <i data-toggle="popover" data-animation="true" data-html="true" data-trigger="hover"
+        title="Council District Number" data-content="Please choose all Council Districts that apply."
+        class="glyphicon glyphicon-info-sign" aria-hidden="true"></i>
+      <select class="form-control" id="CouncilDistrictNumberSelect" name="CouncilDistrictNumberSelect"
+        style="width: 350px;"></select>
+    </div>
+
+    <div class="col-sm-12 col-md-6 hideme" id="currentStatusNotificationContainer">
+      <label for="currentStatusNotification">Current Status:</label>
+      <textarea readonly id="currentStatusNotification" class="form-control" rows="2" style="width:350px;" />
+    </div>
+  </div>
+
+
+  <div class="row" style="padding-bottom:1.5em">
+    <div class="col-sm-12">
+      <label for="TimeLimit">Time Limit:<span class="requiredStar">*</span></label>
+      <input type="checkbox" id="TimeLimit_Yes" name="TimeLimit" style="margin-left: 10pt;"
+        class="formControlCheckbox requiredCheckbox" data-class="requiredCheckbox"
+        onchange="checkboxChanged(this.id)" /><label for="TimeLimit_Yes">&nbsp;Yes</label>
+      <input type="checkbox" id="TimeLimit_No" name="TimeLimit" style="margin-left: 5pt;"
+        class="formControlCheckbox requiredCheckbox" data-class="requiredCheckbox"
+        onchange="checkboxChanged(this.id)" /><label for="TimeLimit_No">&nbsp;No</label>
+    </div>
+
+
+    <div class="hideme" id="ROW_HiddenTimeLimit" style="display: block !important;">
+      <div class="indentedRow">
+        <div style="display: inline-block;">
+          <label for="TimeLimitPursuantToSelect">Time Limit - Pursuant To:<span class="requiredStar">*</span></label>
+
+          <i data-toggle="popover" data-animation="true" data-html="true" data-trigger="hover"
+            title="Time Limit - Pursuant To"
+            data-content="Please fill in the reason for the time limit. Exapmles Include:<br><br><ul><li>California Business and Professions Code</li><li>California Health and Safety Code</li><li>Charter</li><li>Charter Section 1001</li><li>Charter Section 245</li><li>Charter Section 373</li><li>Charter Section 502</li><li>Charter Section 508</li><li>Charter Section 606</li><li>Charter Section 609</li><li>Charter Section 703</li><li>Los Angeles Administrative Code</li><li>Los Angeles Municipal Code</li><li>Other</li></ul>"
+            class="glyphicon glyphicon-info-sign" aria-hidden="true"></i>
+
+          <select class="formControlSelect TimeLimit PursuantTo" data-class="" name="TimeLimitPursuantToSelect"
+            id="TimeLimitPursuantToSelect" onblur="saveTimeLimitValues()">
+            <option value=""></option>
+            <option value="California Business and Professions Code">California Business and Professions Code</option>
+            <option value="California Health and Safety Code">California Health and Safety Code</option>
+            <option value="Charter Section">Charter Section</option>
+            <option value="Los Angeles Administrative Code">Los Angeles Administrative Code</option>
+            <option value="Los Angeles Municipal Code">Los Angeles Municipal Code</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div style="display: inline-block;" id="ROW_CharterSectionNumber">
+          <label for="CharterSectionNumber">Code:</label>
+
+          <input type="text" class="formControlTextMedium" name="CharterSectionNumber" id="CharterSectionNumber"
+            placeholder="Section Code" onblur="saveTimeLimitValues()" />
+        </div>
+
+        <div style="padding-top: 12pt;">
+          <div style="display: inline-block; width: 33%;" class="TimeLimit" id="Field_NumberOfDays">
+            <label for="NumberOfDays">Time Limit - Number of Days for Council to Act:</label>
+
+            <input type="text" class="formControlTextSmall TimeLimit" id="NumberOfDays" name="NumberOfDays"
+              onblur="populateTimeLimit(this.value), saveTimeLimitValues()" />
+          </div>
+
+          <div style="display: inline-block; width: 33%;" class="hideme" id="Field_LastDay">
+            <label for="LastDay">Last Day for Council Action:</label>
+
+            <input type="text" class="formControlText TimeLimit" id="LastDay" name="LastDay"
+              onblur="saveTimeLimitValues()" />
+          </div>
+
+          <div style="display: inline-block; vertical-align: top; width: 33%;" class="hideme" id="Field_TimeLimitDate">
+            <label for="TimeLimitDate">Time Limit Date:</label>
+
+            <input type="text" id="TimeLimitDate" name="TimeLimitDate" class="formControlText TimeLimit"
+              onblur="saveTimeLimitValues()" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="rows" id="ROW_DepartmentTitle">
+    <label for="DepartmentTitle" style="display: block;">Item Title:<span class="requiredStar">*</span></label>
+
+    <textarea class="formControlTextarea requiredInput" name="DepartmentTitle" id="DepartmentTitle"
+      style="width: 38%; height: 100px; margin-right: 45px; display: inline-block;"></textarea>
+  </div>
+
+  <div class="rows hideme" id="ROW_ItemTitle">
+    <label for="ItemTitle" style="display: block;">Council File Title:<span class="requiredStar">*</span></label>
+
+    <textarea class="formControlTextarea" data-class="requiredTextarea" name="ItemTitle" id="ItemTitle"
+      style="width: 38%; height: 100px; margin-right: 45px; display: inline-block;"></textarea>
+  </div>
+
+
+  <legend class="legends">SUBMISSION CONTACT</legend>
+  <div class="rows">
+    <label for="SubmissionName">Name</label>
+    <input type="text" class="formControlText" id="SubmissionName" name="SubmissionName" readonly />
+  </div>
+  <div class="rows">
+    <label for="SubmissionEmail">Email</label>
+    <input type="text" class="formControlText" id="SubmissionEmail" name="SubmissionEmail" readonly />
+  </div>
+  <div class="rows">
+    <label for="SubmissionPhone">Phone</label>
+    <input type="text" class="formControlText requiredText" id="SubmissionPhone" name="SubmissionPhone" readonly />
+  </div>
+
+  <legend class="legends">DOCUMENT CONTACT</legend>
+  <div class="rows">
+    <div style="display: inline-block; vertical-align: top; padding-right: 15px;">
+      <label for="DocumentContactPerson">Document Contact Person:</label>
+
+      <i data-toggle="popover" data-animation="true" data-html="true" data-trigger="hover"
+        title="Document Contact Person Instructions"
+        data-content="Include who knows and understands the document being created.<br><br>To create an entry not currently in the lookup list you must use this format:<br><span style='color: #80bfff'>Users name</span><span style='color: red; font-weight: bold;'>;</span><span style='color: #80bfff'>email</span><span style='color: red; font-weight: bold;'>;</span><span style='color: #80bfff'>phone-number</span><br>Be sure there are not any spaces between the semi-colons and the next value and that you only include the users name, email, and phone number."
+        class="glyphicon glyphicon-info-sign" aria-hidden="true"></i>
+
+      <select type="text" class="form-control" id="DocumentContactPerson" name="DocumentContactPerson"
+        style="width: 350px;"></select>
+    </div>
+
+    <div id="ROW_DocumentContact" style="display: inline-block; vertical-align: top;">
+      <legend style="margin-bottom: 5px; font-size: 14px; font-weight: bold; border-bottom: none;">Document
+        Contact Person</legend>
+
+      <div
+        style="height: 150px; width: 600px; border: 1px solid black; padding: 8px; border-radius: 4px; overflow-y: auto; overflow-x: hidden;">
+        <div id="DocumentPreContact" style="width: 600px; outline: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rows" id="ROW_Indexer">
+    <legend class="legends">Indexer</legend>
+    <div class="rows" id="ROW_ceqaCheck">
+      <label for="ceqaCheckbox" style="margin-left:10px;">Check for CEQA Appeal: </label>
+      <input type="checkbox" id="ceqaCheckbox" name="ceqaCheckbox" onchange="populateCEQAAppeal()">
+    </div>
+
+    <div class="rows" id="ROW_ReferenceNumber">
+      <label for="ReferenceNumber">Reference Number:</label>
+
+      <textarea class="formControlTextarea" name="ReferenceNumber" id="ReferenceNumber"
+        style="width: 38%; height: 100px; margin-right: 45px;"></textarea>
+    </div>
+
+    <div class="rows">
+      <div style="display: inline-block; vertical-align: top; padding-right: 15px;">
+        <label for="ExpirationDate">Expiration Date</label>
+
+        <input type="text" id="ExpirationDate" name="ExpirationDate" class="form-control" />
+      </div>
+    </div>
+
+    <div class="rows">
+      <div style="display: inline-block; vertical-align: top; padding-right: 15px;">
+        <label for="IndexApproverReceivedDate">Index Received Date:</label>
+
+        <input type="text" id="IndexApproverReceivedDate" name="IndexApproverReceivedDate" class="form-control" />
+      </div>
+    </div>
+  </div>
+
+  <div class="rows" id="ROW_MeetingsSelection">
+    <legend class="legends">Referral Clerk</legend>
+
+    <div class="rows">
+      <div style="display: inline-block; vertical-align: top; padding-right: 15px;">
+        <label for="PreCommitteesSelect">Recommended Council/Committee:</label>
+
+        <select id="PreCommitteesSelect" name="PreCommitteesSelect" class="form-control" style="width: 350px;"></select>
+      </div>
+
+      <div id="ROW_Committees" style="display: inline-block; vertical-align: top;">
+        <legend style="margin-bottom: 5px; font-size: 14px; font-weight: bold; border-bottom: none;">Recommended
+          Council/Committee</legend>
+
+        <div
+          style="height: 150px; width: 600px; border: 1px solid black; padding: 8px; border-radius: 4px; overflow-y: auto; overflow-x: hidden;">
+          <div id="PreCommittees" style="width: 600px; outline: none;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rows" id="ROW_MoverSeconder">
+    <div class="rows">
+      <div style="display: inline-block; vertical-align: top; padding-right: 15px;">
+        <label for="PreMoverSelect">Mover:</label>
+
+        <select id="PreMoverSelect" name="PreMoverSelect" class="form-control" style="width: 350px;"></select>
+      </div>
+
+      <div id="ROW_PreMover" style="display: inline-block; vertical-align: top;">
+        <legend style="margin-bottom: 5px; font-size: 14px; font-weight: bold; border-bottom: none;">Movers</legend>
+
+        <div
+          style="height: 150px; width: 600px; border: 1px solid black; padding: 8px; border-radius: 4px; overflow-y: auto; overflow-x: hidden;">
+          <div id="PreMover" style="width: 600px; outline: none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rows">
+      <div style="display: inline-block; vertical-align: top; padding-right: 15px;">
+        <label for="PreSeconderSelect">Second:</label>
+
+        <select id="PreSeconderSelect" name="PreSeconderSelect" class="form-control" style="width: 350px;"></select>
+      </div>
+
+      <div id="ROW_PreSeconder" style="display: inline-block; vertical-align: top;">
+        <legend style="margin-bottom: 5px; font-size: 14px; font-weight: bold; border-bottom: none;">Seconders</legend>
+
+        <div
+          style="height: 150px; width: 600px; border: 1px solid black; padding: 8px; border-radius: 4px; overflow-y: auto; overflow-x: hidden;">
+          <div id="PreSeconder" style="width: 600px; outline: none;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rows" id="ROW_LACal">
+    <legend class="legends" id="LACAL">Calendar</legend>
+
+    <div style="display: block;">
+      <div class="rows" style="display: inline-block; width: 45%;">
+        <div>
+          <label for="committeeSelectCustom">Committee:<span class="requiredStar">*</span></label>
+        </div>
+        <div class="rows">
+          <select id="committeeSelectCustom" name="committeeSelectCustom" data-for="meetingTypesCustom"
+            data-field-hasvalue="false" data-field-values="committeeCustom" class="formControlSelect"
+            data-class="requiredSelect" style="width: 400px;"></select>
+        </div>
+      </div>
+      <div class="rows" style="display: inline-block; width: 45%;">
+        <div>
+          <label for="meetingTypeSelectCustom">Meeting Type:<span class="requiredStar">*</span></label>
+        </div>
+        <div class="rows">
+          <select id="meetingTypeSelectCustom" name="meetingTypeSelectCustom" data-dependent-on="committeeSelectCustom"
+            data-field-hasvalue="false" data-field-values="meetingTypesCustom" class="formControlSelect"
+            data-class="requiredSelect" style="width: 400px;"></select>
+        </div>
+      </div>
+    </div>
+    <div style="display: block;">
+      <div class="rows" style="display: inline-block; width: 45%;">
+        <div>
+          <label style="width: 50%;" for="meetingDateSelect">Meeting Date:<span class="requiredStar">*</span></label>
+        </div>
+        <div class="rows">
+          <select id="meetingDateSelect" name="meetingDateSelect" data-dependent-on="meetingTypeSelectCustom"
+            data-field-hasvalue="false" data-field-values="meetingDatesCustom" class="formControlSelect"
+            data-class="requiredSelect" style="width: 400px;"></select>
+        </div>
+      </div>
+      <div class="rows" style="display: inline-block; width: 45%;">
+        <div>
+          <label for="meetingSectionSelect">Meeting Section:<span class="requiredStar">*</span></label>
+        </div>
+        <div class="rows">
+          <select id="meetingSectionSelect" name="meetingSectionSelect" data-dependent-on="meetingDateSelect"
+            data-field-hasvalue="false" data-field-values="meetingSectionsCustom" class="formControlSelect"
+            data-class="requiredSelect" style="width: 400px;"></select>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<style>
+  .itemContainer:hover {
+    filter: brightness(95%);
+  }
+
+  .requiredStar {
+    font-weight: bold;
+    color: red;
+    padding-left: 3pt;
+  }
+
+  .legends {
+    width: 100%;
+    padding-left: .5em;
+    margin: auto;
+    margin-top: 4em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2.5px solid #E41B17;
+  }
+
+  .inlineRows {
+    display: inline-block;
+    padding-bottom: 1.5em;
+    width: 49%;
+  }
+
+  .threeInlineRow {
+    display: inline-block;
+    width: 30%;
+  }
+
+  .rows {
+    display: block;
+    padding-bottom: 2em;
+  }
+
+  .indentedRow {
+    display: block;
+    padding-left: 3em;
+  }
+
+  .formControlTextDate {
+    display: block;
+    width: 350px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  .formControlTextDate:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+  }
+
+  .formControlText {
+    display: block;
+    width: 350px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  .formControlText:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+  }
+
+  .formControlTextMedium {
+    display: block;
+    width: 150px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  .formControlTextMedium:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+  }
+
+  .formControlTextSmall {
+    display: block;
+    width: 100px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  .formControlTextSmall:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+  }
+
+  .formControlSelect {
+    display: block;
+    min-width: 350px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  .formControlSelect:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+  }
+
+  .formControlTextarea {
+    display: block;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  .formControlTextarea:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+  }
+
+  .clear {
+    height: 22px;
+    width: 20px;
+    border-radius: 20px;
+    background: #d9d9d9;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .clear:hover {
+    background: #b3b3b3;
+  }
+
+  .tabs {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .tabs .tabs-list li a {
+    text-decoration: none;
+    color: #404040;
+    font-weight: 550;
+  }
+
+  .tabs-list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .tabs .tabs-list li {
+    width: 100px;
+    float: right;
+    margin-right: 1.5%;
+    padding: 5px 3px 6px 3px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .PdfViewer {
+    height: 800px;
+    display: block;
+    position: absolute;
+    width: 95%;
+    top: 150px;
+  }
+
+  #FormViewer {
+    transition: color .6s ease-in-out;
+    -moz-transition: color .6s ease-in-out;
+    -webkit-transition: color .6s ease-in-out;
+    -o-transition: color .6s ease-in-out;
+  }
+
+  .clearButton {
+    border: 1px solid black;
+    width: 59px;
+    text-align: center;
+    margin-right: 50px;
+    background-color: gainsboro;
+    cursor: pointer;
+    outline: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    padding: 7px 13px;
+    -moz-box-sizing: border-box;
+    font-size: 15px;
+    font-weight: normal;
+    color: black;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 4px;
+  }
+
+  .clearButton:active {
+    vertical-align: top;
+    padding: 8px 13px 6px;
+  }
+
+  .clearButton:hover {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  .progress-percent {
+    z-index: 99;
+    position: absolute;
+    width: 100px;
+    min-width: 100px;
+    text-align: center;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  .progress-filename {
+    overflow-x: hidden;
+    font-weight: bold;
+  }
+
+  .fileUploadListItem {
+    border-bottom: solid 2px #CCCCCC;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .progress {
+    margin-bottom: 0px !important;
+  }
+
+  .progress-cell div {
+    max-width: 100px;
+  }
+
+  .popover-content {
+    width: max-content;
+    max-width: 700px;
+  }
+
+  .popover {
+    width: max-content;
+    max-width: 700px;
+  }
+
+  .checkBoxLabel {
+    padding-left: 2px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  .checkboxControlsInline {
+    display: inline;
+  }
+
+  .legends {
+    width: 100%;
+    padding-left: .5em;
+    margin: auto;
+    margin-top: 4em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2.5px solid #E41B17;
+  }
+
+  .requiredError {
+    border: 1px solid red !important;
+  }
+
+  .requiredErrorLbl {
+    color: red;
+    font-size: 11pt;
+    font-weight: 600;
+    font-style: italic;
+    padding-left: 5px;
+  }
+
+  .requiredCheckboxLbl {
+    padding-left: 3px;
+    padding-right: 8px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  .selectize-input::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #808080 transparent transparent transparent;
+  }
+
+  .selectize-input,
+  .selectize-control.single .selectize-input.input-active {
+    cursor: pointer;
+  }
+
+  .selectize-dropdown .option,
+  .selectize-dropdown {
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  let authToken;
+  var routingOptions = [];
+  var testing = false;
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var departments = [];
+  var userGroups = [];
+  var cDocumentList = []
+  var documentsList = []
+  var userArr = [];
+  var systemItems = [];
+  var committeeArray = [];
+  var meetingTypes = [];
+  var members = [];
+  var mDates = [];
+  const existingMovers = [];
+  const existingSeconders = [];
+  var url = window.location.protocol + "//" + window.location.host + "/";
+  var councilDistrictNumbers = [
+    {
+      'text': "CD 1", "value": "1"
+    },
+    {
+      'text': "CD 2", "value": "2"
+    },
+    {
+      'text': "CD 3", "value": "3"
+    },
+    {
+      'text': "CD 4", "value": "4"
+    },
+    {
+      'text': "CD 5", "value": "5"
+    },
+    {
+      'text': "CD 6", "value": "6"
+    },
+    {
+      'text': "CD 7", "value": "7"
+    },
+    {
+      'text': "CD 8", "value": "8"
+    },
+    {
+      'text': "CD 9", "value": "9"
+    },
+    {
+      'text': "CD 10", "value": "10"
+    },
+    {
+      'text': "CD 11", "value": "11"
+    },
+    {
+      'text': "CD 12", "value": "12"
+    },
+    {
+      'text': "CD 13", "value": "13"
+    },
+    {
+      'text': "CD 14", "value": "14"
+    },
+    {
+      'text': "CD 15", "value": "15"
+    }
+  ];
+  let moverCounter = 0;
+  let seconderCounter = 0;
+  var CustomFormOptions = function () { };
+  var FormOptionsCustom = new CustomFormOptions;
+  (function () {
+    $("#committeeSelectCustom").empty();
+    $("#meetingTypeSelectCustom").empty();
+    $("#meetingDateSelect").empty();
+    $("#meetingSectionSelect").empty();
+
+    CustomFormOptions.prototype.loadOptionsCustom = function (savedValues) {
+      var $form1 = $("#FormHtml");
+      var CustomFormOptions = {
+        $committeeSelectsForPositions: $form1.find('[data-field-values*="committeeCustom"]').filter(' [data-field-hasvalue*="false"]').filter(' [data-for*="positionsCustom"]'),
+        $committeeSelectsForMeetingTypes: $form1.find('[data-field-values*="committeeCustom"]').filter(' [data-field-hasvalue*="false"]').filter(' [data-for*="meetingTypesCustom"]'),
+        $meetingTypeSelects: $form1.find('[data-field-values*="meetingTypesCustom"]').filter('[data-field-hasvalue*="false"]'),
+        $meetingDateSelects: $form1.find('[data-field-values*="meetingDatesCustom"]').filter(' [data-field-hasvalue*="false"]'),
+        $meetingSectionSelects: $form1.find('[data-field-values*="meetingSectionsCustom"]').filter(' [data-field-hasvalue*="false"]')
+      }
+
+      loadCommitteesCustom();
+
+      if ($('[data-name="Department"]').length) {
+        loadDepartmentsCustom($('[data-name="Department"]').attr('id'));
+      }
+      if ($('[data-name="Division"]').length) {
+        loadDivisionsCustom($('[data-name="Division"]').attr('id'));
+      }
+      if ($('[data-name="ItemTypeCustom"]').length) {
+        loadItemtypesCustom($('[data-name="ItemTypeCustom"]').attr('id'));
+      }
+
+      function loadCommitteeSelectsCustom() {
+        var totSelects = CustomFormOptions.$committeeSelectsForMeetingTypes.length +
+          CustomFormOptions.$committeeSelectsForPositions.length;
+
+        var selectsLoaded = 0;
+
+        $.each(CustomFormOptions.$committeeSelectsForMeetingTypes, function (index, comSelect) {
+          selectsLoaded++;
+
+          $("#" + comSelect.id).append($('<option></option>').val(0).html("Select Committee"));
+
+          $.each(committeesCustom, function (ind, committee) {
+            if (testing == false) {
+              var splitCom = $("#committeesHolder").val().split(";")[0];
+              var splitComId = splitCom.split("|")[0];
+
+              if (splitComId == committee.id) {
+                $("#" + comSelect.id).append($("<option></option>").val(committee.id).html(committee.name));
+              }
+            }
+            else {
+              $("#" + comSelect.id).append($("<option></option>").val(committee.id).html(committee.name));
+            }
+          });
+
+          if ($("#committees").val() == "" || $("#committees").val() == null) {
+            $("#" + comSelect.id).val(0);
+          }
+
+          $("#" + comSelect.id).on("change", function () {
+            loadMeetingTypesCustom($("#" + comSelect.id).val(), comSelect.id);
+          });
+        });
+
+        $.each(CustomFormOptions.$committeeSelectsForPositions, function (idx, select) {
+          selectsLoaded++;
+
+          $("#" + select.id).append($("<option></option>").html("Select Committee"));
+
+          $.each(committeesCustom, function (ind, committee) {
+            $("#" + select.id).append($("<option></option>").val(committee.id).html(committee.name));
+          });
+
+          $("#" + select.id).on("change", function () {
+            loadComitteePositionsCustom($("#" + select.id).val(), select.id);
+          });
+        });
+
+        if (savedValues !== undefined && selectsLoaded === totSelects) {
+          loadSelectValuesCustom(savedValues);
+        }
+      }
+
+      function loadSelectValuesCustom(values) {
+        //load select values
+        $.each(values, function (key, item) {
+          var fld = $('select').filter("#" + key);
+          if (fld.length === 0) {
+            return;
+          }
+          else {
+            //committee selects are already loaded. 
+            if (fld.data("field-values") === "committees") {
+              fld.val(item).trigger("change");
+            }
+            else {
+              fld.data("field-value", item);
+            }
+          }
+        });
+      }
+
+      function loadCommitteesCustom() {
+        $.post(ROOT + "api/committee/list/", null, function (data) {
+          committeesCustom = data;
+        })
+          .fail(function (jqXHR, status, error) {
+          })
+          .always(function () {
+            loadCommitteeSelectsCustom();
+          });
+      }
+
+      function loadDepartmentsCustom(id) {
+        $("#" + id).empty();
+        $("#" + id).append($("<option></option>"));
+
+        $.get('/api/department/list', function (data) {
+          $.each(data, function (index, item) {
+            $("#" + id).append(
+              $("<option></option>")
+                .text(item.name)
+                .val(item.id)
+            );
+          });
+        })
+          .fail(function (jqXHR, status, error) {
+            alert("To use the department lookup you must add some departments list from the 'Admin' > 'Lookups' menu.");
+          })
+          .always(function () {
+
+          });
+      }
+
+      function loadDivisionsCustom(id) {
+        $("#" + id).empty(); // Remove all <option> child tags.
+        $("#" + id).append($("<option></option>"));
+
+        $.get('/api/division/list', function (data) {
+          $.each(data, function (index, item) { // Iterates through a collection
+            $("#" + id).append( // Append an object to the inside of the select box
+              $("<option></option>") // Yes you can do this.
+                .text(item.name)
+                .val(item.id)
+            );
+          });
+        })
+          .fail(function (jqXHR, status, error) {
+            alert("To use the division lookup you must add some divisions list from the 'Admin' > 'Lookups' menu.");
+          })
+          .always(function () {
+
+          });
+      }
+
+      function loadItemtypesCustom(id) {
+        $("#" + id).empty(); // Remove all <option> child tags.
+        $("#" + id).append($('<option value="0"></option>'));
+
+        $.get('/api/systemitemtype/list', function (data) {
+          $("#" + id).on("change", function () {
+            //loadItemTypeCustomFields($(this).val(), $(this).text());
+          });
+
+          $.each(data, function (index, item) {
+            $("#" + id).append($("<option></option>").text(item.name).val(item.id));
+          });
+        })
+          .fail(function (jqXHR, status, error) {
+            alert("There was an error getting the item types from the system or they do not exist and need to be created.");
+          })
+          .always(function () {
+
+          })
+      }
+
+      function loadItemTypeCustomFields(val, text) {
+        $("#InfoForm").append('<div class="row"><div class="col-md-6"><label for="' + + '">' + + '</label><span class="requiredStar">*</span>');
+      }
+
+      function loadMeetingTypesCustom(committeeId, selectId) {
+        if (committeeId === "0" || committeeId === null) return;
+
+        $.getJSON(ROOT + "api/meetingtype/ListActiveMeetingTypes" + "?committeeId=" + committeeId, null, function (data) {
+          var select = $form1.find('[data-dependent-on="' + selectId + '"]');
+
+          $("#" + select[0].id).find("option").remove();
+          $("#" + select[0].id).append($("<option></option>").val(0).html("Select Meeting Type"));
+
+          var val = select.data("field-value");
+          var opts = data.length;
+          var optsAdded = 0;
+
+          $("#" + select[0].id).on("change", function () {
+            loadMeetingDatesCustom($("#" + select[0].id).val(), select[0].id);
+          });
+
+          if (data.length > 0) {
+            $.each(data, function (idx, type) {
+              optsAdded++;
+
+              $("#" + select[0].id).append($("<option></option>").val(type.id).html(type.name));
+
+              checkForSettingValCustom(opts, optsAdded, val, select[0].id);
+            });
+          }
+          else {
+            $("#" + select[0].id).append($("<option></option>").val("").html("No meetings types."));
+          }
+
+
+        })
+          .fail(function (jqXHR, status, error) {
+
+          })
+          .always(function () {
+
+          });
+      }
+
+      function loadMeetingDatesCustom(meetingTypeId, meetingTypeSelectId) {
+        if (meetingTypeId === "0") return;
+
+        $.getJSON(ROOT + "api/meeting/listupcomingbymeetingtype/?meetingTypeId=" + meetingTypeId, null, function (data) {
+          var select = $form1.find('[data-dependent-on="' + meetingTypeSelectId + '"]');
+
+          if (CustomFormOptions.$meetingSectionSelects.length > 0) {
+            $("#" + select[0].id).on("change", function () {
+              loadMeetingSectionsCustom($("#" + select[0].id).val(), select[0].id);
+            });
+          }
+
+          $("#" + select[0].id).find("option").remove();
+          $("#" + select[0].id).append($("<option></option>").val(0).html("Select Meeting Date"));
+
+          var val = select.data("field-value");
+          var opts = data.length;
+          var optsAdded = 0;
+
+          if (data.length > 0) {
+            $.each(data, function (index, meeting) {
+              optsAdded++;
+
+              var date = new Date(meeting.scheduledEvent.start);
+              var time = getTime(date);
+
+              $("#" + select[0].id).append($('<option data-meetingid="' + meeting.id + '" data-meetingtitle="' + meeting.title + '" data-meetingtype="' + meeting.meetingTypeName + '" data-time="' + time + '"></option>').val(meeting.id).data("title", meeting.title).html((date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear()));
+
+              checkForSettingValCustom(opts, optsAdded, val, select[0].id);
+            });
+          }
+          else {
+            $("#" + select[0].id).append($("<option></option>").val("").html("No upcoming meetings"));
+          }
+        })
+          .fail(function (jqXHR, status, error) {
+
+          })
+          .always(function () {
+
+          });
+      }
+
+      function loadMeetingSectionsCustom(meetingId, meetingDataSelectId) {
+        if (meetingId === "0") return;
+
+        var postData = {
+          Id: meetingId
+        }
+
+        $.post(ROOT + "api/meetingsectiontemplate/ListForPreMeetingWithFormatting", postData, function (data) {
+          var select = $form1.find('[data-dependent-on="' + meetingDataSelectId + '"]');
+
+          $("#" + select[0].id).empty();
+          $("#" + select[0].id).append($('<option></option>').val(0).html("Select Section"));
+
+          var opts = data.length;
+          var optsAdded = 0;
+          var val = select.data("field-value");
+
+          allSections = data;
+
+          $.each(data, function (index, section) {
+            optsAdded++;
+
+            var sectionsToShow = [
+              "items noticed for public hearing",
+              "items for which public hearings have been held",
+              "items for which public hearings have not been held - (10 votes required for consideration)",
+              "closed session",
+              "continuation agenda",
+              "supplemental agenda",
+              "special agenda"
+            ]
+
+            if (jQuery.inArray(section.name.toLowerCase(), sectionsToShow) != -1 && (section.name.toLowerCase() == "continuation agenda" || section.name.toLowerCase() == "supplemental agenda" || section.name.toLowerCase() == "special agenda")) {
+              $("#" + select[0].id).append($('<option style="background-color: #D2D2D2;" disabled="disabled"></option>').val(section.id).html(section.name));
+            }
+            else if ($("#committeeSelectCustom option:selected").text().toLowerCase == "city council" && jQuery.inArray(section.name.toLowerCase(), sectionsToShow) != -1) {
+              $("#" + select[0].id).append($('<option style="cursor: pointer;"></option>').val(section.id).html(section.name));
+            }
+            else if ($("#committeeSelectCustom option:selected").text().toLowerCase != "city council") {
+              $("#" + select[0].id).append($('<option style="cursor: pointer;"></option>').val(section.id).html(section.name));
+            }
+          });
+        })
+          .fail(function (jqXHR, status, error) {
+
+          })
+          .always(function () {
+
+          });
+      }
+
+      function loadComitteePositionsCustom(committeeId, comSelectId) {
+        if (committeeId === "0") return;
+
+        $.getJSON(ROOT + "api/committeeposition/list/" + "?committeeId=" + committeeId, null, function (data) {
+          var select = $form1.find('[data-dependent-on="' + comSelectId + '"]');
+
+          $("#" + select[0].id).find("option").remove();
+          $("#" + select[0].id).append($("<option></option>").val(0).html("Select Position"));
+
+          var val = select.data("field-value");
+          var opts = data.length;
+          var optsAdded = 0;
+
+          if (data.length > 0) {
+            $.each(data, function (idx, type) {
+              optsAdded++;
+
+              $("#" + select[0].id).append($("<option></option>").val(type.id).html(type.name));
+
+              checkForSettingValCustom(opts, optsAdded, val, select[0].id);
+            });
+          }
+          else {
+            $("#" + select[0].id).append($("<option></option>").val("").html("No Committee Positions."));
+          }
+        })
+          .fail(function (jqXHR, status, error) {
+
+          })
+          .always(function () {
+
+          });
+      }
+
+      function checkForSettingValCustom(opts, optsAdded, val, id) {
+        if (val !== undefined && opts === optsAdded) {
+          $("#" + id).val(val).trigger("change");
+        }
+      }
+
+      function getTime(date) {
+        var d = new Date(date);
+        var hh = d.getHours();
+        var m = d.getMinutes();
+        var s = d.getSeconds();
+        var dd = "AM";
+        var h = hh;
+        if (h >= 12) {
+          h = hh - 12;
+          dd = "PM";
+        }
+
+        if (h == 0) {
+          h = 12;
+        }
+
+        m = m < 10 ? "0" + m : m;
+
+        s = s < 10 ? "0" + s : s;
+
+        //if you want 2 digit hours:
+        //h = h < 10 ? "0" + h : h;
+
+        var pattern = new RegExp("0?" + hh + ":" + m + ":" + s);
+
+        var replacement = h + ":" + m;
+        /* if you want to add seconds
+        replacement += ":"+s;  */
+        replacement += " " + dd;
+
+        return replacement;
+      }
+    }
+  })();
+
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+
+    populateCouncilDistrictNumber();
+    populateDepartment();
+    populateCurrentDate();
+    populateItemType();
+    populateUserGroups();
+    populateDocumentContact();
+    getCommittees();
+    authToken = getAuthToken(url);
+
+    $("#currentStatusNotification").val($("#currentStatusNotificationHolder").val());
+    //populateRequestForReferral();
+    setTimeout(function () {
+      loadTimeLimitValues();
+      fillMoverField();
+      fillSeconderField();
+    }, 1000);
+
+    console.log('WFStep', $("#WFStep").val());
+
+    if (testing == false) {
+      HideFields("submitBtn,cancelBtn,btnDraft,btnViewDrafts,ROW_Indexer,ROW_MeetingsSelection,ROW_MoverSeconder,ROW_SubmittingOnBehalf,ROW_LACal,searchItems,currentStatusNotificationContainer");
+    }
+    else {
+      HideFields("submitBtn,cancelBtn,btnDraft,btnViewDrafts");
+    }
+
+    if ($("#CharterSectionNumber").val() != "" && $("#CharterSectionNumber").val() != null) {
+      ShowFields("ROW_CharterSectionNumber");
+    }
+
+    $("#FormSaveArea").prepend('<button type="button" style="margin-right: 15px;" id="cancelBtnCustom" onclick="cancel();" class="lm-btn btn btn-primary ladda-button" lm-ladda="save" data-style="zoom-in" data-size="s">Cancel</button>');
+    $("#FormSaveArea").prepend('<button type="button" style="margin-right: 15px;" id="submitBtnCustom" class="lm-btn btn btn-primary ladda-button" lm-ladda="save" data-style="zoom-in" data-size="s">Submit</button>');
+
+    if ($("#WFStep").val() == "" || $("#WFStep").val() == null) {
+      $.each($(".hideme"), function () {
+        $(this).hide();
+      })
+    }
+    else {
+      populateMultiSelects();
+    }
+
+    $("#submitBtnCustom").click(function () {
+      validateFields();
+    })
+
+    $("select").on('click', function () {
+      if ($(this).hasClass('requiredError')) {
+        var id = $(this).attr('id');
+
+        $('label[for="' + id + '"]').children('label').remove();
+        $(this).removeClass('requiredError');
+      }
+    })
+
+    $("textarea").on('click', function () {
+      if ($(this).hasClass('requiredError')) {
+        var id = $(this).attr('id');
+
+        $('label[for="' + id + '"]').children('label').remove();
+        $(this).removeClass('requiredError');
+      }
+    })
+
+    $("input").on('click', function () {
+      if ($(this).hasClass('requiredCheckboxError')) {
+        $(this).removeClass('requiredCheckboxError');
+        var id = $(this).attr('name');
+
+        $('label[for="' + id + '"]').children('label').remove();
+      }
+      else if ($(this).hasClass('requiredError')) {
+        var id = $(this).attr('id');
+
+        $('label[for="' + id + '"]').children('label').remove();;
+        $(this).removeClass('requiredError');
+      }
+    })
+
+
+  })
+
+  function populateTimeLimit() {
+    var d = new Date();
+    var day = d.getDate($("#IndexApproverReceivedDate").val());
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+
+    if ($("#NumberOfDays").val() != null && $("#NumberOfDays").val() != "") {
+      var numberOfDays = parseInt($("#NumberOfDays").val());
+      var calcDate = new Date(month + "/" + day + "/" + year);
+      calcDate.setDate(calcDate.getDate() + numberOfDays);
+      var cDay = calcDate.getDate();
+      var cMonth = monthNames[calcDate.getMonth()];
+      var cYear = calcDate.getFullYear();
+
+      $("#TimeLimitDate").val(`${cMonth.toUpperCase()} ${cDay}, ${cYear}`);
+    }
+    //This might be clearing out values for time limit when the form gets routed?
+    // else {
+    //   $("#TimeLimitDate").val("");
+    // }
+  }
+
+  function validateFieldsForRouting() {
+    var submitForm = true;
+    var focused = false;
+    var requiredField = '<label class="requiredErrorLbl">This Field is Required</label>';
+
+    $.each($(".requiredErrorLbl"), function () {
+      $(this).remove();
+    })
+
+    $.each($(".requiredSelect"), function (ele) {
+      if ($(this).val() == "" || $(this).val() == null || $(this).val() == 0 || $(this).val() == 0 || $(this).val() == 0 || $(this).val() == 0) {
+        if (focused == false) {
+          focused = true;
+
+          $(this).focus();
+          $(this).blur();
+        }
+
+        $(this).addClass("requiredError");
+        $('label[for="' + this.attributes.id.value + '"]').append(requiredField);
+
+        submitForm = false;
+      }
+    })
+
+    $.each($(".requiredInput"), function (ele) {
+      if (($(this).html() == "" || $(this).val() == null) && ($(this).val() == "" || $(this).val() == null)) {
+        if (focused == false) {
+          focused = true;
+
+          $(this).focus();
+          $(this).blur();
+        }
+
+        if (this.attributes.id.value == "PrePresenters") {
+          $('#PrePresenters').parent().addClass("requiredError");
+          $('#PrePresenters').parent().parent().children('legend').after(requiredField);
+        }
+        else {
+          $(this).addClass("requiredError");
+
+          $('label[for="' + this.attributes.id.value + '"]').append(requiredField);
+        }
+
+        submitForm = false;
+      }
+    })
+
+    $.each($(".requiredCheckbox"), function (ele) {
+      var boxes = $('[name="' + $(this).attr('name') + '"]');
+
+      if (boxes[0].checked == false && boxes[1].checked == false) {
+        if (focused == false) {
+          focused = true;
+
+          $("#" + boxes[0].attributes.id.value).focus();
+          $("#" + boxes[0].attributes.id.value).blur();
+        }
+
+        var requiredFieldBox = '<label id="' + $(this).attr('name') + '_lbl" class="requiredErrorLbl">This Field is Required</label>';
+
+        $("#" + boxes[0].attributes.id.value).addClass("requiredCheckboxError");
+        $("#" + boxes[1].attributes.id.value).addClass("requiredCheckboxError");
+
+        if ($("#" + $(this).attr('name') + "_lbl").length < 1) {
+          $('label[for="' + $(this).attr('name') + '"]').append(requiredFieldBox);
+        }
+
+        submitForm = false;
+      }
+    })
+
+    $.each($(".requiredRadio"), function (ele) {
+      var radios = $('[name="' + $(this).attr('name') + '"]');
+
+      if (radios[0].checked == false && radios[1].checked == false) {
+        if (focused == false) {
+          focused = true;
+
+          $("#" + radios[0].attributes.id.value).focus();
+        }
+
+        var requiredFieldBox = '<label id="' + $(this).attr('name') + '_lbl" class="requiredErrorLbl">This Field is Required</label>';
+
+        $("#" + radios[0].attributes.id.value).addClass("requiredError");
+        $("#" + radios[1].attributes.id.value).addClass("requiredError");
+
+        if ($("#" + $(this).attr('name') + "_lbl").length < 1) {
+          $('label[for="' + $(this).attr('name') + '"]').append(requiredFieldBox);
+        }
+
+        submitForm = false;
+      }
+    })
+
+    $.each($(".requiredTextarea"), function (ele) {
+      if ($(this).val() == "" || $(this).val() == null) {
+        if (focused == false) {
+          focused = true;
+
+          $(this).focus();
+          $(this).blur();
+        }
+
+        $(this).addClass("requiredError");
+        $('label[for="' + this.attributes.id.value + '"]').append(requiredField);
+
+        submitForm = false;
+      }
+    })
+
+    if (submitForm == true && testing == false) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  function validateCommitteeCouncil() {
+    var submitForm = true;
+    var focused = false;
+    var requiredField = '<label class="requiredErrorLbl">This Field is Required</label>';
+
+    $.each($(".requiredErrorLbl"), function () {
+      $(this).remove();
+    })
+
+    if ($("#committeesHolder").val() == "" || $("#committeesHolder").val() == null) {
+      if (focused == false) {
+        focused = true;
+      }
+
+      $("#PreCommitteesSelect-selectized").parent().addClass("requiredError");
+      $('label[for="PreCommitteesSelect-selectized"]').append(requiredField);
+
+      alert("You must select a valid option to continue");
+
+      submitForm = false;
+    }
+
+    return submitForm;
+  }
+
+  function validateFields() {
+    $("#WFStep").val("Originator");
+
+    var submitForm = true;
+    var focused = false;
+    var requiredField = '<label class="requiredErrorLbl">This Field is Required</label>';
+
+    $.each($(".requiredErrorLbl"), function () {
+      $(this).remove();
+    })
+
+    $.each($(".requiredSelect"), function (ele) {
+      if ($(this).val() == "" || $(this).val() == null || $(this).val() == 0 || $(this).val() == 0 || $(this).val() == 0 || $(this).val() == 0) {
+        if (focused == false) {
+          focused = true;
+
+          $(this).focus();
+          $(this).blur();
+        }
+
+        $(this).addClass("requiredError");
+        $('label[for="' + this.attributes.id.value + '"]').append(requiredField);
+
+        submitForm = false;
+      }
+    })
+
+    $.each($(".requiredInput"), function (ele) {
+      if (($(this).html() == "" || $(this).val() == null) && ($(this).val() == "" || $(this).val() == null)) {
+        if (focused == false) {
+          focused = true;
+
+          $(this).focus();
+          $(this).blur();
+        }
+
+        if (this.attributes.id.value == "PrePresenters") {
+          $('#PrePresenters').parent().addClass("requiredError");
+          $('#PrePresenters').parent().parent().children('legend').after(requiredField);
+        }
+        else {
+          $(this).addClass("requiredError");
+
+          $('label[for="' + this.attributes.id.value + '"]').append(requiredField);
+        }
+
+        submitForm = false;
+      }
+    })
+
+    $.each($(".requiredCheckbox"), function (ele) {
+      var boxes = $('[name="' + $(this).attr('name') + '"]');
+
+      if (boxes[0].checked == false && boxes[1].checked == false) {
+        if (focused == false) {
+          focused = true;
+
+          $("#" + boxes[0].attributes.id.value).focus();
+          $("#" + boxes[0].attributes.id.value).blur();
+        }
+
+        var requiredFieldBox = '<label id="' + $(this).attr('name') + '_lbl" class="requiredErrorLbl">This Field is Required</label>';
+
+        $("#" + boxes[0].attributes.id.value).addClass("requiredCheckboxError");
+        $("#" + boxes[1].attributes.id.value).addClass("requiredCheckboxError");
+
+        if ($("#" + $(this).attr('name') + "_lbl").length < 1) {
+          $('label[for="' + $(this).attr('name') + '"]').append(requiredFieldBox);
+        }
+
+        submitForm = false;
+      }
+    })
+
+    $.each($(".requiredRadio"), function (ele) {
+      var radios = $('[name="' + $(this).attr('name') + '"]');
+
+      if (radios[0].checked == false && radios[1].checked == false) {
+        if (focused == false) {
+          focused = true;
+
+          $("#" + radios[0].attributes.id.value).focus();
+        }
+
+        var requiredFieldBox = '<label id="' + $(this).attr('name') + '_lbl" class="requiredErrorLbl">This Field is Required</label>';
+
+        $("#" + radios[0].attributes.id.value).addClass("requiredError");
+        $("#" + radios[1].attributes.id.value).addClass("requiredError");
+
+        if ($("#" + $(this).attr('name') + "_lbl").length < 1) {
+          $('label[for="' + $(this).attr('name') + '"]').append(requiredFieldBox);
+        }
+
+        submitForm = false;
+      }
+    })
+
+    $.each($(".requiredTextarea"), function (ele) {
+      if ($(this).val() == "" || $(this).val() == null) {
+        if (focused == false) {
+          focused = true;
+
+          $(this).focus();
+          $(this).blur();
+        }
+
+        $(this).addClass("requiredError");
+        $('label[for="' + this.attributes.id.value + '"]').append(requiredField);
+
+        submitForm = false;
+      }
+    })
+
+    //TODO: change this to save on blur instead of on form submit so that later changes in the workflow will also get saved
+    if (submitForm == true && testing == false) {
+      //set a holder value to prevent updates when "existing council file" is searched at indexer step      
+      // $("#TimeLimitSelectHolder").val($("#TimeLimitPursuantToSelect").val());
+      // $("#PursuantTo").val($("#TimeLimitPursuantToSelect").val() + " " + $("#CharterSectionNumber").val());
+      // $("#PursuantToHolder").val($("#TimeLimitPursuantToSelect").val() + " " + $("#CharterSectionNumber").val());
+
+      $("#submitBtn").trigger('click');
+    }
+    else {
+      // $("#TimeLimitSelectHolder").val($("#TimeLimitPursuantToSelect").val());
+      // $("#PursuantTo").val($("#TimeLimitPursuantToSelect").val() + " " + $("#CharterSectionNumber").val());
+      // $("#PursuantToHolder").val($("#TimeLimitPursuantToSelect").val() + " " + $("#CharterSectionNumber").val());
+
+      return false;
+    }
+  }
+
+  function populateDate(meetDate = null) {
+    var d;
+    if (meetDate != null) {
+      d = new Date(meetDate);
+    }
+    else {
+      d = new Date();
+    }
+
+    var month = monthNames[d.getMonth()];
+    var day = d.getDate();
+
+    var outputDate = month + " " + (('' + day).length < 2 ? 0 + day : day) + ", " + d.getFullYear();
+
+    return outputDate;
+  }
+
+  function populateReferralSearchDate() {
+    var d = new Date();
+
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+
+    var outputDate = (month < 10 ? "0" + month : month) + "/" + (day < 10 ? "0" + day : day) + "/" + d.getFullYear();
+
+    return outputDate;
+  }
+
+  function populateMultiSelects() {
+    console.warn('populate multi selects ran');
+    if ($("#DocumentContactHolder").val()) {
+      $.each($("#DocumentContactHolder").val().split("|"), function (index, val) {
+        if (val != null && val != "") {
+          var newVal = val.split(";")[0].replace(/\//g, "");
+          newVal = newVal.replace(/\'/g, "");
+          newVal = newVal.replace(/\(/g, "");
+          newVal = newVal.replace(/\)/g, "");
+          newVal = newVal.replace(/\s/g, "");
+          newVal = newVal.replace(/\,/g, "");
+          newVal = newVal.replace(/\&/g, "");
+
+          $("#DocumentPreContact").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + newVal + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + val.split(";")[0] + '</div><div style="display: block;">' + val.split(";")[1] + '</div><div style="display: block;">' + val.split(";")[2] + '</div></div><div onclick="addContactOptionBack(\'' + val.split(";")[0] + '\', \'' + val.split(";")[1] + '\', \'' + (val.split(";")[2] != null ? val.split(";")[2] : "N/A") + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+
+          $("#DocumentContactPerson")[0].selectize.removeOption(val.split(";")[0]);
+        }
+      })
+    }
+
+    if ($("#committeesHolder").val()) {
+      $.each($("#committeesHolder").val().split(";"), function (index, val) {
+        if (val != null && val != "") {
+          newVal = val.split("|")[0].replace(/\//g, "");
+          newVal = newVal.replace(/\'/g, "");
+          newVal = newVal.replace(/\(/g, "");
+          newVal = newVal.replace(/\)/g, "");
+          newVal = newVal.replace(/\s/g, "");
+          newVal = newVal.replace(/\,/g, "");
+          newVal = newVal.replace(/\&/g, "");
+
+          $("#PreCommittees").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + newVal + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + val.split("|")[1] + '</div></div><div onclick="addCommitteeBack(\'' + val.split("|")[0] + '\', \'' + val.split("|")[1] + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+          //Trigger change event after append to adjust the list of LA Emails
+          $("#PreCommittees").trigger('change');
+          //Remove selection from list of available choices
+          const selectValue = val.split("|")[0];
+          if ($(`#PreCommitteeSelect option[value='${selectValue}']`).length > 0) {
+            $("#PreCommitteesSelect")[0].selectize.removeOption(val.split("|")[0]);
+          }
+        }
+      })
+    }
+
+    // if ($("#movers").val()) {
+    //   $.each($("#movers").val().split(";"), function (index, val) {
+    //     if (val != null && val != "") {
+    //       newVal = val.split(",")[0].replace(/\//g, "");
+    //       newVal = newVal.replace(/\'/g, "");
+    //       newVal = newVal.replace(/\(/g, "");
+    //       newVal = newVal.replace(/\)/g, "");
+    //       newVal = newVal.replace(/\s/g, "");
+    //       newVal = newVal.replace(/\,/g, "");
+    //       newVal = newVal.replace(/\&/g, "");
+    //       newVal = newVal.replace(/\./g, "");
+
+    //       $("#PreMover").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + newVal + '"><div style="width: 500px; display: inline-block;"><div style="display: block;">' + val.split(",")[0] + '</div></div><div onclick="addMoverBack(\'' + val.split(",")[0] + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+
+    //       const preMover = val.split(",")[0];
+    //       const preSeconder = val.split(",")[0];
+
+    //       if ($(`#PreMoverSelect option[value='${preMover}']`).length > 0) {
+    //         $("#PreMoverSelect")[0].selectize.removeOption(preMover);
+    //       }
+    //       if ($(`#PreSeconderSelect option[value='${preSeconder}']`).length > 0) {
+    //         $("#PreSeconderSelect")[0].selectize.removeOption(preSeconder);
+    //       }
+    //     }
+    //   })
+    // }
+
+    // if ($("#seconders").val()) {
+    //   $.each($("#seconders").val().split(";"), function (index, val) {
+    //     if (val != null && val != "") {
+    //       newVal = val.split(",")[0].replace(/\//g, "");
+    //       newVal = newVal.replace(/\'/g, "");
+    //       newVal = newVal.replace(/\(/g, "");
+    //       newVal = newVal.replace(/\)/g, "");
+    //       newVal = newVal.replace(/\s/g, "");
+    //       newVal = newVal.replace(/\,/g, "");
+    //       newVal = newVal.replace(/\&/g, "");
+    //       newVal = newVal.replace(/\./g, "");
+
+    //       $("#PreSeconder").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + newVal + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + val.split(",")[1] + '</div></div><div onclick="addSeconderBack(\'' + val.split(",")[0] + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+
+    //       const preMover = val.split(",")[0];
+    //       const preSeconder = val.split(",")[0];
+
+    //       if ($(`#PreMoverSelect option[value='${preMover}']`).length > 0) {
+    //         $("#PreMoverSelect")[0].selectize.removeOption(preMover);
+    //       }
+    //       if ($(`#PreSeconderSelect option[value='${preSeconder}']`).length > 0) {
+    //         $("#PreSeconderSelect")[0].selectize.removeOption(preSeconder);
+    //       }
+    //     }
+    //   })
+    // }
+
+
+    populateCheckboxes();
+  }
+
+  function populateCheckboxes() {
+    $.each($("#CheckboxHolder").val().split(","), function (index, cb) {
+      if (!$('#' + cb).is(':checked')) {
+        $('#' + cb).trigger('click');
+      }
+    })
+
+    populateNewOrExistingCouncilFile();
+  }
+
+  function populateNewOrExistingCouncilFile() {
+    if ($("#NewOrExistingCouncilFile").val() != "" && $("#NewOrExistingCouncilFile").val() != null) {
+      if ($("#NewOrExistingCouncilFile").val() == "New") {
+        $("#SystemItem").val("");
+
+        $("#NewCouncilFile").prop('checked', true);
+
+        $("#searchItems").hide();
+      }
+      else {
+        $("#ExistingCouncilFile").prop('checked', true);
+
+        $("#searchItems").show();
+      }
+    }
+
+    checkRoutingOptions();
+  }
+
+  function checkRoutingOptions() {
+    var taskId = document.URL.split("/")[document.URL.split("/").length - 1];
+
+    if (routingOptions.length == 0) {
+      $.ajax({
+        type: "GET",
+        async: false,
+        url: url + "api/workflow_Task/getTaskChoices/" + taskId,
+        datatype: "json",
+        success: function (data) {
+          $.each(data, function (index, value) {
+            routingOptions.push(value.trim());
+          });
+        }
+      })
+    }
+
+    if ($(".route-to").children('a').length - 1 == routingOptions.length) {
+      $.each($('.route-to').children('a'), function () {
+        if ($(this).html().indexOf("HiddenStep_") >= 0) {
+          $(this).hide();
+
+          switch ($(this).html().split("HiddenStep_")[1].toLowerCase()) {
+            case "originator":
+              HideFields("ROW_ItemTitle,Field_LastDay,Field_TimeLimitDate,NewCouncilFile,NewCouncilFileLabel,ExistingCouncilFile,ExistingCouncilFileLabel");
+
+              break;
+            case "department approver":
+              $("#WFStep").val("Department Approver");
+
+              HideFields("ROW_ItemTitle,Field_LastDay,Field_TimeLimitDate,NewCouncilFile,NewCouncilFileLabel,ExistingCouncilFile,ExistingCouncilFileLabel");
+
+              break;
+
+            case "indexer":
+              $("#WFStep").val("Indexer");
+
+              ShowFields("ROW_Indexer,ROW_MoverSeconder");
+              ShowFields("currentStatusNotificationContainer");
+
+              break;
+            case "indexer peer review":
+              $("#WFStep").val("Indexer Peer Review");
+
+              ShowFields("ROW_Indexer,ROW_MoverSeconder");
+              ShowFields("currentStatusNotificationContainer");
+
+              break;
+            case "referral clerk council file":
+              $("#WFStep").val("Referral Clerk Council File");
+
+              ShowFields("ROW_Indexer,ROW_MoverSeconder");
+              ShowFields("currentStatusNotificationContainer");
+
+              break;
+            case "referral clerk":
+              $("#WFStep").val("Referral Clerk");
+
+              ShowFields("ROW_Indexer,ROW_MeetingsSelection,ROW_MoverSeconder");
+              getWorkflowTask();
+
+              break;
+            case "calendar":
+              $("#WFStep").val("Calendar");
+
+              $("#LACAL").html("Calendar");
+              ShowFields("ROW_MeetingsSelection,ROW_LACal,ROW_MoverSeconder");
+              ShowFields("currentStatusNotificationContainer");
+
+              getWorkflowTask();
+
+              $("#committeeSelectCustom").addClass('requiredSelect');
+              $("#meetingTypeSelectCustom").addClass('requiredSelect');
+              $("#meetingDateSelect").addClass('requiredSelect');
+              $("#meetingSectionSelect").addClass('requiredSelect');
+
+              FormOptionsCustom.loadOptionsCustom();
+
+              break;
+            case "legislative assistants":
+              $("#WFStep").val("Legislative Assistants");
+
+              $("#LACAL").html("Legislative Assistants");
+              ShowFields("ROW_MeetingsSelection,ROW_LACal,ROW_MoverSeconder");
+              ShowFields("currentStatusNotificationContainer");
+
+              getWorkflowTask();
+
+              $("#committeeSelectCustom").addClass('requiredSelect');
+              $("#meetingTypeSelectCustom").addClass('requiredSelect');
+              $("#meetingDateSelect").addClass('requiredSelect');
+              $("#meetingSectionSelect").addClass('requiredSelect');
+
+              FormOptionsCustom.loadOptionsCustom();
+
+              break;
+          }
+        }
+        else if ($(this).html().indexOf("Hidden_") >= 0) {
+          $(this).hide();
+        }
+      })
+    }
+    else {
+      setTimeout(checkRoutingOptions, 500);
+    }
+  }
+
+  function getCommittees() {
+
+    $.ajax({
+      type: "GET",
+      url: url + "api/committee/GetAccessable?showInactive=false",
+      datatype: "json",
+      success: function (data) {
+        console.log('get accessable committee data', data);
+        committeeArray = data;
+
+        $("#PreMoverSelect").empty();
+        $("#PreMoverSelect").append('<option value=""></option>');
+
+        $("#PreSecond").empty();
+        $("#PreSecond").append('<option value=""></option>');
+
+        $.each(data, function (index, com) {
+          $.ajax({
+            type: "GET",
+            url: url + "api/meetingtype/ListActiveMeetingTypes?committeeId=" + com.id + "&forCreatingMeeting=true",
+            datatype: "json",
+            success: function (meetingTypeData) {
+              console.log('get meeting type data', meetingTypeData);
+              meetingTypes = meetingTypeData;
+
+              $.each(meetingTypeData, function (index, meetingType) {
+                $.ajax({
+                  type: "GET",
+                  url: url + "api/meetingtypeuserrole/list?meetingTypeId=" + meetingType.id,
+                  datatype: "json",
+                  success: function (userData) {
+                    console.log('GET MEETING ROLES API', userData);
+                    $.each(userData, function (index, member) {
+                      if (member.role == "3" || member.role == "2") {
+                        members.push({
+                          "fullName": member.firstName.trim() + " " + member.lastName.trim()
+                        })
+                      }
+                    })
+
+                    populateCommittees();
+                    populateMover();
+                    populateSecond();
+                  },
+                  error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Error Occurred getting System Item Types: " + errorThrown);
+                  }
+                })
+              })
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+              alert("Error Occurred getting System Item Types: " + errorThrown);
+            }
+          })
+        })
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("Error Occurred getting System Item Types: " + errorThrown);
+      }
+    })
+  }
+
+  $('[data-toggle="popover"]').each(function () {
+    var $pop = $(this);
+    $pop.popover({
+      html: true,
+      trigger: "hover",
+      title: $pop.attr('data-title'),
+      content: $pop.attr('data.content'),
+      container: $pop,
+      animation: false
+    })
+  })
+
+  function populateUserGroups() {
+    $.ajax({
+      type: "Get",
+      url: url + "api/userGroup/list",
+      datatype: "json",
+      success: function (data) {
+        userGroups = data;
+        $.each(data, function (index, group) {
+
+          if (group.name.toLowerCase() == "da_" + $("#Department").val().toLowerCase()) {
+            $("#DepartmentApprover").val(group.id);
+
+            if ($("#WFStep").val() == "" || $("#WFStep").val() == null) {
+              $.each(group.users, function (ind, user) {
+                if ($("#DepartmentApproverEmails").val() == "" || $("#DepartmentApproverEmails").val() == null) {
+                  $("#DepartmentApproverEmails").val(user.email);
+                }
+                else {
+                  $("#DepartmentApproverEmails").val($("#DepartmentApproverEmails").val() + "," + user.email);
+                }
+              })
+              console.log('DA Emails', $("#DepartmentApproverEmails").val());
+            }
+          }
+          else if (group.name.toLowerCase() == "indexapprover") {
+            //Send this group an email if item is rejected
+            $("#IndexApprover").val(group.id);
+
+            //assign emails to hidden variable to send email blast, but only if the starting value is empty
+            if ($("#WFStep").val() == "" || $("#WFStep").val() == null) {
+              for (i = 0; i < group.users.length; i++) {
+                if ($("#indexerEmails").val() === "" || $("#indexerEmails").val() === null) {
+                  $("#indexerEmails").val(group.users[i].email)
+                } else {
+                  $("#indexerEmails").val($("#indexerEmails").val() + ',' + group.users[i].email)
+                }
+              }
+            }
+          }
+          else if (group.name.toLowerCase() == "referralclerk") {
+            $("#ReferralClerk").val(group.id);
+          }
+          else if (group.name.toLowerCase() == "calendar") {
+            $("#Calendar").val(group.id);
+            $.each(group.users, function (index, users) {
+              if ($("#CalendarEmails").val() == null || $("#CalendarEmails").val() == "") {
+                $("#CalendarEmails").val(users.email);
+              }
+              else {
+                if ($("#CalendarEmails").val().toLowerCase().indexOf(users.email.toLowerCase()) < 0) {
+                  $("#CalendarEmails").val($("#CalendarEmails").val() + "," + users.email);
+                }
+              }
+            })
+          }
+        })
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("Error Occurred getting System Item Types: " + errorThrown);
+      }
+    })
+  }
+
+  function ShowFields(fields) {
+    if (fields.indexOf(",") >= 0) {
+      $.each(fields.split(","), function (index, field) {
+        if (field.indexOf(".") >= 0) {
+          $.each($(field), function () {
+            $(this).show();
+
+            $("#" + $(this).attr('id')).addClass($("#" + $(this).attr('id')).data("class"));
+          })
+        }
+        else if (field.indexOf("_") >= 0) {
+          $("#" + field).show();
+
+          $("#" + field.split("_")[1]).addClass($("#" + field.split("_")[1]).data("class"));
+        }
+        else {
+          $("#" + field).show();
+
+          $("#" + field).addClass($("#" + field).data("class"));
+        }
+      })
+    }
+    else {
+      if (fields.indexOf(".") >= 0) {
+        $.each($(fields), function () {
+          $(this).show();
+
+          $("#" + $(this).attr('id')).addClass($("#" + $(this).attr('id')).data("class"));
+        })
+      }
+      else if (fields.indexOf("_") >= 0) {
+        $("#" + fields).show();
+
+        $("#" + fields.split("_")[1]).addClass($("#" + fields.split("_")[1]).data("class"));
+      }
+      else {
+        $("#" + fields).show();
+
+        $("#" + fields).addClass($("#" + fields).data("class"));
+      }
+    }
+  }
+
+  function HideFields(fields) {
+    if (fields.indexOf(",") >= 0) {
+      $.each(fields.split(","), function (index, field) {
+        if (field.indexOf(".") >= 0) {
+          $.each($(field), function () {
+            $(this).hide();
+
+            $("#" + $(this).attr('id')).removeClass($("#" + $(this).attr('id')).data("class"));
+
+            if ($("#" + $(this).attr('id')).hasClass('requiredError')) {
+              $("#" + $(this).attr('id')).removeClass('requiredError');
+            }
+          })
+        }
+        else if (field.indexOf("_") >= 0) {
+          $("#" + field).hide();
+
+          $("#" + field.split("_")[1]).removeClass($("#" + field.split("_")[1]).data("class"));
+
+          if ($("#" + field.split("_")[1]).hasClass('requiredError')) {
+            $("#" + field.split("_")[1]).removeClass('requiredError');
+          }
+        }
+        else {
+          $("#" + field).hide();
+
+          $("#" + field).removeClass($("#" + field).data("class"));
+
+          if ($("#" + field).hasClass('requiredError')) {
+            $("#" + field).removeClass('requiredError');
+          }
+        }
+      })
+    }
+    else {
+      if (fields.indexOf(".") >= 0) {
+        $.each($(fields), function () {
+          $(this).hide();
+
+          $("#" + $(this).attr('id')).removeClass($("#" + $(this).attr('id')).data("class"));
+
+          if ($("#" + $(this).attr('id')).hasClass('requiredError')) {
+            $("#" + $(this).attr('id')).removeClass('requiredError');
+          }
+        })
+      }
+      else if (fields.indexOf("_") >= 0) {
+        $("#" + fields).hide();
+
+        $("#" + fields.split("_")[1]).removeClass($("#" + fields.split("_")[1]).data("class"));
+
+        if ($("#" + fields.split("_")[1]).hasClass('requiredError')) {
+          $("#" + fields.split("_")[1]).removeClass('requiredError');
+        }
+      }
+      else {
+        $("#" + fields).hide();
+
+        $("#" + fields).removeClass($("#" + fields).data("class"));
+
+        if ($("#" + fields).hasClass('requiredError')) {
+          $("#" + fields).removeClass('requiredError');
+        }
+      }
+    }
+  }
+
+  function populateItemType() {
+    $.get('/api/systemitemtype/list', function (data) {
+      $("#systemItemTypeId").append(
+        $("<option></option>").text("").val("")
+      );
+
+      $("#systemItemTypeId").append(
+        $("<option></option>").text("Routine Item").val("3")
+      );
+
+      $.each(data, function (index, item) { // Iterates through a collection
+        switch ($("#Department").val().toLowerCase()) {
+          case "city clerk":
+            if (item.name.toLowerCase() == "pcn") {
+              $("#systemItemTypeId").append(
+                $("<option></option>")
+                  .text(item.name)
+                  .val(item.id)
+              );
+            }
+
+            break;
+          case "public works: bureau of engineering":
+            if (item.name.toLowerCase() == "tract/parcel map" || item.name.toLowerCase() == "accelerated file") {
+              $("#systemItemTypeId").append(
+                $("<option></option>")
+                  .text(item.name)
+                  .val(item.id)
+              );
+            }
+
+            break;
+          case "los angeles department of building and safety":
+            if (item.name.toLowerCase() == "lien") {
+              $("#systemItemTypeId").append(
+                $("<option></option>")
+                  .text(item.name)
+                  .val(item.id)
+              );
+            }
+
+            break;
+          case "los angeles housing department":
+            if (item.name.toLowerCase() == "reap") {
+              $("#systemItemTypeId").append(
+                $("<option></option>")
+                  .text(item.name)
+                  .val(item.id)
+              );
+            }
+
+            break;
+        }
+      });
+
+      //need to sort this list twice...
+      sortlist('systemItemTypeId', 1)
+
+      if ($("#ItemTypeHolder").val() != "") {
+        $("#systemItemTypeId").val($("#ItemTypeHolder").val());
+
+        $("#systemItemTypeId").trigger('change');
+      }
+
+      //SetupSelectize('ItemTypeSelect')
+    })
+  }
+
+  function sortlist(id, sortNum) {
+    //param sortNum (optional) makes it so you can custom set the sorting level 
+    if (sortNum == undefined) {
+      sortNum = 2
+    }
+
+    var cl = document.getElementById(id);
+    var clTexts = new Array();
+
+    for (i = sortNum; i < cl.length; i++) {
+      clTexts[i - sortNum] =
+        cl.options[i].text.toUpperCase() + "," +
+        cl.options[i].text + "," +
+        cl.options[i].value;
+    }
+
+    clTexts.sort();
+
+    for (i = sortNum; i < cl.length; i++) {
+      var parts = clTexts[i - sortNum].split(',');
+
+      cl.options[i].text = parts[1];
+      cl.options[i].value = parts[2];
+    }
+  }
+  //TODO: Pursuant to and referred to are getting cleared out at some point during form submission
+  //Check 00-0000-S5
+
+
+  function checkboxChanged(id) {
+    var prefix = id.split("_")[0]
+    var row = "ROW_Hidden" + prefix;
+
+    //if Time limit gets changed to No, empty the values in time limit and pursuant to
+    if (id.split("_")[1] === "No" && prefix === "TimeLimit") {
+      $("#TimeLimitPursuantToSelect").val("");
+      $("#CharterSectionNumber").val("");
+      $("#NumberOfDays").val("");
+      $("#LastDay").val("");
+      $("#Field_TimeLimitDate").val("");
+      $("#TimeLimitDate").val("");
+      populateTimeLimit("");
+    }
+
+    if (id.split("_")[1] == "Yes" && $('#' + id).is(':checked')) {
+      var checkboxesArr = $("#CheckboxHolder").val().split(",");
+      var index = checkboxesArr.indexOf(prefix + "_No");
+      if (index >= 0) {
+        checkboxesArr.splice(index, 1);
+        $("#CheckboxHolder").val(checkboxesArr.join(","));
+      }
+
+      $('#' + prefix + '_No').prop('checked', false);
+
+      $("#" + prefix + "_CheckboxValue").val("Yes");
+
+      $("#" + row).show();
+
+      if ($("#CheckboxHolder").val() == "" || $("#CheckboxHolder").val() == null) {
+        $("#CheckboxHolder").val(id);
+      }
+      else {
+        $("#CheckboxHolder").val($("#CheckboxHolder").val() + "," + id);
+      }
+
+      $.each($("." + prefix), function () {
+        var type = this.nodeName.toLowerCase()
+
+        if ($("#WFStep").val() == "Indexer" || $("#WFStep").val() == "Indexer Peer Review" || $("#WFStep").val() == "Referral Clerk Council File" || $("#WFStep").val() == "Referral Clerk") {
+          switch (type) {
+            case "input":
+              $(this).addClass("requiredInput")
+
+              break;
+            case "textarea":
+              $(this).addClass("requiredTextarea")
+
+              break;
+            case "select":
+              $(this).addClass("requiredSelect")
+
+              break;
+
+            case "radio":
+              $(this).addClass("requiredRadio");
+
+              break;
+          }
+        }
+        //Time limit is only required if time limit yes is checked
+        else {
+          if ($("#TimeLimit_Yes").prop("checked", true)) {
+            $("#TimeLimitPursuantToSelect").addClass("requiredInput");
+          } else {
+            return;
+          }
+
+        }
+      })
+    }
+    else if (id.split("_")[1] == "No" && $('#' + id).is(':checked')) {
+      var checkboxesArr = $("#CheckboxHolder").val().split(",");
+      var index = checkboxesArr.indexOf(prefix + "_Yes");
+      if (index >= 0) {
+        checkboxesArr.splice(index, 1);
+        $("#CheckboxHolder").val(checkboxesArr.join(","));
+      }
+
+      $('#' + prefix + '_Yes').prop('checked', false);
+
+      $("#" + prefix + "_CheckboxValue").val("No");
+
+      $("#" + row).hide();
+
+      if ($("#CheckboxHolder").val() == "" || $("#CheckboxHolder").val() == null) {
+        $("#CheckboxHolder").val(id);
+      }
+      else {
+        $("#CheckboxHolder").val($("#CheckboxHolder").val() + "," + id);
+      }
+
+      $.each($("." + prefix), function () {
+        var type = this.nodeName.toLowerCase()
+
+        switch (type) {
+          case "input":
+            $(this).removeClass("requiredInput")
+
+            break;
+          case "textarea":
+            $(this).removeClass("requiredTextarea")
+
+            break;
+          case "select":
+            $(this).removeClass("requiredSelect")
+
+            break;
+        }
+      })
+    }
+    else if (id.split("_")[1] == "Yes" && !$('#' + id).is(':checked')) {
+      var checkboxesArr = $("#CheckboxHolder").val().split(",");
+      var index = checkboxesArr.indexOf(id);
+      if (index >= 0) {
+        checkboxesArr.splice(index, 1);
+        $("#CheckboxHolder").val(checkboxesArr.join(","));
+      }
+
+      $('#' + prefix + '_No').prop('checked', true);
+
+      $("#" + prefix + "_CheckboxValue").val("No");
+
+      $("#" + row).hide();
+
+      if ($("#CheckboxHolder").val() == "" || $("#CheckboxHolder").val() == null) {
+        $("#CheckboxHolder").val(prefix + "_No");
+      }
+      else {
+        $("#CheckboxHolder").val($("#CheckboxHolder").val() + "," + prefix + "_No");
+      }
+
+      $.each($("." + prefix), function () {
+        var type = this.nodeName.toLowerCase()
+
+        if ($("#WFStep").val() == "Indexer" || $("#WFStep").val() == "Indexer Peer Review" || $("#WFStep").val() == "Referral Clerk Council File" || $("#WFStep").val() == "Referral Clerk") {
+          switch (type) {
+            case "input":
+              $(this).addClass("requiredInput")
+
+              break;
+            case "textarea":
+              $(this).addClass("requiredTextarea")
+
+              break;
+            case "select":
+              $(this).addClass("requiredSelect")
+
+              break;
+          }
+        }
+        else {
+          $("#TimeLimitPursuantToSelect").addClass("requiredInput");
+        }
+      })
+    }
+    else if (id.split("_")[1] == "No" && !$('#' + id).is(':checked')) {
+      var checkboxesArr = $("#CheckboxHolder").val().split(",");
+      var index = checkboxesArr.indexOf(id);
+      if (index >= 0) {
+        checkboxesArr.splice(index, 1);
+        $("#CheckboxHolder").val(checkboxesArr.join(","));
+      }
+
+      $('#' + prefix + '_Yes').prop('checked', true);
+
+      $("#" + prefix + "_CheckboxValue").val("Yes");
+
+      $("#" + row).show();
+
+      if ($("#CheckboxHolder").val() == "" || $("#CheckboxHolder").val() == null) {
+        $("#CheckboxHolder").val(prefix + "_Yes");
+      }
+      else {
+        $("#CheckboxHolder").val($("#CheckboxHolder").val() + "," + prefix + "_Yes");
+      }
+    }
+  }
+
+  function populateCurrentDate() {
+    var dateval = moment(Date());
+    $("#CurrentDate").val(dateval.format('dddd MMMM DD, YYYY'));
+  }
+
+
+  /****************************************************************************************************************************************************************************
+                                POPULATE DEPARTMENT INFORMATION
+  ****************************************************************************************************************************************************************************/
+  function populateDepartment() {
+    $.ajax({
+      type: "Get",
+      url: url + "api/user/list",
+      datatype: "json",
+      async: false,
+      success: function (data) {
+        userArr = data;
+
+        $.each(data, function (index, element) {
+          if (element.id == $("#OriginatorId").val()) {
+
+            $("#originatorEmail").val(element.email);
+            getDept(element.departmentId);
+
+            populateSubmissionContact(element);
+            populateDepartmentInformation(element);
+          }
+        })
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("Error Occurred getting populateDept: " + errorThrown);
+      }
+    })
+  }
+
+  function getDept(id) {
+    $.ajax({
+      type: "Get",
+      url: url + "api/department/list",
+      datatype: "json",
+      async: false,
+      success: function (data) {
+        $.each(data, function (index, element) {
+
+          if (element.id == id) {
+            $("#Department").val(element.name);
+
+            $("#DepartmentName").val(element.name);
+            $("#DepartmentId").val(element.id);
+
+            if (element.name.toLowerCase() == "city administrative officer") {
+              ShowFields("ROW_SubmittingOnBehalf");
+            }
+            else {
+              HideFields("ROW_SubmittingOnBehalf");
+            }
+          }
+        })
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+      }
+    })
+  }
+
+  function populateDepartmentInformation(e) {
+    var deptName = $("#Department option:selected").text();
+    $("#DepartmentName").val(deptName);
+    $("#DepartmentId").val(e.departmentId);
+
+    if (deptName.toLowerCase() == "city administrative officer") {
+      ShowFields("ROW_SubmittingOnBehalf");
+    }
+    else {
+      HideFields("ROW_SubmittingOnBehalf");
+    }
+
+    populateDocumentContact();
+  }
+  /****************************************************************************************************************************************************************************
+                                POPULATE DEPARTMENT INFORMATION
+  ****************************************************************************************************************************************************************************/
+
+
+
+
+
+  /****************************************************************************************************************************************************************************
+                                POPULATE DOCUMENT CONTACT INFORMATION
+  ****************************************************************************************************************************************************************************/
+  var alreadyRanDocumentContact = false;
+  function populateDocumentContact() {
+    if (alreadyRanDocumentContact == true) {
+      var docSelectize = $("#DocumentContactPerson")[0].selectize;
+      docSelectize.clear();
+    }
+
+    var filteredUserArr = userArr.filter(function (obj) {
+      return parseInt(obj.departmentId) === parseInt($("#DepartmentId").val());
+    })
+    $.each(filteredUserArr, function (index, ele) {
+      $("#DocumentContactPerson").append('<option value="' + ele.firstName + " " + ele.lastName + '">' + ele.firstName + " " + ele.lastName + '</option>');
+    })
+
+    var sel = $("#DocumentContactPerson");
+    var selected = sel.val();
+    var opts_list = sel.find('option');
+    opts_list.sort(function (a, b) { return $(a).text() > $(b).text() ? 1 : -1; });
+    sel.html('').append(opts_list);
+    sel.val("");
+
+    $('#DocumentContactPerson').selectize({
+      sortField: {
+        field: 'text',
+        direction: 'asc'
+      },
+      persist: false,
+      hideSelected: true,
+      create: function (input) {
+        return {
+          value: input,
+          text: input
+        }
+      },
+      onChange: function (value) {
+        var newVal = value;
+        newVal = newVal.replace(/\//g, "");
+        newVal = newVal.replace(/\'/g, "");
+        newVal = newVal.replace(/\(/g, "");
+        newVal = newVal.replace(/\)/g, "");
+        newVal = newVal.replace(/\s/g, "");
+        newVal = newVal.replace(/\,/g, "");
+        newVal = newVal.replace(/\&/g, "");
+
+        if (alreadyRanDocumentContact == false) {
+          alreadyRanDocumentContact = true;
+
+          if (value.indexOf(";") >= 0) {
+            var newIdVal = value.split(';')[0];
+            newIdVal = newIdVal.replace(/\//g, "");
+            newIdVal = newIdVal.replace(/\'/g, "");
+            newIdVal = newIdVal.replace(/\(/g, "");
+            newIdVal = newIdVal.replace(/\)/g, "");
+            newIdVal = newIdVal.replace(/\s/g, "");
+            newIdVal = newIdVal.replace(/\,/g, "");
+            newIdVal = newIdVal.replace(/\&/g, "");
+
+            if ($("#DocumentContact").val() == "") {
+              var contactsVal = value.split(';')[0] + "\n" + value.split(';')[1] + "\n" + value.split(';')[2];
+              $("#DocumentContact").val(contactsVal);
+
+              if ($("#DocumentContactHolder").val() == "" || $("#DocumentContactHolder").val() == null) {
+                $("#DocumentContactHolder").val(value.split(';')[0] + ";" + value.split(';')[1] + ";" + value.split(';')[2]);
+              }
+              else {
+                $("#DocumentContactHolder").val($("#DocumentContactHolder").val() + "|" + value.split(';')[0] + ";" + value.split(';')[1] + ";" + value.split(';')[2]);
+              }
+
+              $("#DocumentPreContact").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + newIdVal + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + value.split(';')[0] + '</div><div style="display: block;">' + value.split(';')[1] + '</div><div style="display: block;">' + value.split(';')[2] + '</div></div><div onclick="addContactOptionBack(\'' + value.split(';')[0] + '\', \'' + value.split(';')[1] + '\', \'' + value.split(';')[2] + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+            }
+            else {
+              var contactsVal = value.split(';')[0] + "\n" + value.split(';')[1] + "\n" + value.split(';')[2];
+              $("#DocumentContact").val($("#DocumentContact").val() + "\n\n" + contactsVal);
+
+              if ($("#DocumentContactHolder").val() == "" || $("#DocumentContactHolder").val() == null) {
+                $("#DocumentContactHolder").val(value.split(';')[0] + ";" + value.split(';')[1] + ";" + value.split(';')[2]);
+              }
+              else {
+                $("#DocumentContactHolder").val($("#DocumentContactHolder").val() + "|" + value.split(';')[0] + ";" + value.split(';')[1] + ";" + value.split(';')[2]);
+              }
+
+              $("#DocumentPreContact").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + newIdVal + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + value.split(';')[0] + '</div><div style="display: block;">' + value.split(';')[1] + '</div><div style="display: block;">' + value.split(';')[2] + '</div></div><div onclick="addContactOptionBack(\'' + value.split(';')[0] + '\', \'' + value.split(';')[1] + '\', \'' + value.split(';')[2] + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+            }
+          }
+          else {
+            if ($("#DocumentContact").val() == "") {
+              $.each(userArr.filter(function (obj) {
+                return obj.firstName.toLowerCase() === $("#DocumentContactPerson option:selected").text().split(' ')[0].toLowerCase() && obj.lastName.toLowerCase() === $("#DocumentContactPerson option:selected").text().split(' ')[1].replace(",", "").toLowerCase()
+              }), function (index, objs) {
+                var contactsVal = value + "\n" + objs.email + "\n" + (objs.phoneNumber != null ? objs.phoneNumber : "N/A");
+                $("#DocumentContact").val(contactsVal);
+
+                if ($("#DocumentContactHolder").val() == "" || $("#DocumentContactHolder").val() == null) {
+                  $("#DocumentContactHolder").val(value + ";" + objs.email + ";" + objs.phoneNumber);
+                }
+                else {
+                  $("#DocumentContactHolder").val($("#DocumentContactHolder").val() + "|" + value + ";" + objs.email + ";" + objs.phoneNumber);
+                }
+
+                $("#DocumentPreContact").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + newVal + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + value + '</div><div style="display: block;">' + objs.email + '</div><div style="display: block;">' + (objs.phoneNumber != null ? objs.phoneNumber : "N/A") + '</div></div><div onclick="addContactOptionBack(\'' + value + '\', \'' + objs.email + '\', \'' + objs.phoneNumber + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+              })
+            }
+            else {
+              $.each(userArr.filter(function (obj) { return obj.firstName.toLowerCase() === $("#DocumentContactPerson option:selected").text().split(' ')[0].toLowerCase() && obj.lastName.toLowerCase() === $("#DocumentContactPerson option:selected").text().split(' ')[1].replace(",", "").toLowerCase() }), function (index, objs) {
+                var contactsVal = value + "\n" + objs.email + "\n" + (objs.phoneNumber != null ? objs.phoneNumber : "N/A");
+                $("#DocumentContact").val($("#DocumentContact").val() + "\n\n" + contactsVal);
+
+                if ($("#DocumentContactHolder").val() == "" || $("#DocumentContactHolder").val() == null) {
+                  $("#DocumentContactHolder").val(value + ";" + objs.email + ";" + objs.phoneNumber);
+                }
+                else {
+                  $("#DocumentContactHolder").val($("#DocumentContactHolder").val() + "|" + value + ";" + objs.email + ";" + objs.phoneNumber);
+                }
+
+                $("#DocumentPreContact").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + newVal + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + value + '</div><div style="display: block;">' + objs.email + '</div><div style="display: block;">' + objs.phoneNumber + '</div></div><div onclick="addContactOptionBack(\'' + value + '\', \'' + objs.email + '\', \'' + (objs.phoneNumber != null ? objs.phoneNumber : "N/A") + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+              })
+            }
+          }
+
+          this.removeOption(this.items[0]);
+        }
+        else {
+          alreadyRanDocumentContact = false;
+        }
+      }
+    })
+  }
+
+  function addContactOptionBack(value, email, phoneNumber) {
+    $("#DocumentContactPerson")[0].selectize.addOption({ value: value + ";" + email + ";" + phoneNumber, text: value });
+
+    $("#DocumentContact").val($("#DocumentContact").val().replace(value, ""));
+    $("#DocumentContact").val($("#DocumentContact").val().replace(email, ""));
+    $("#DocumentContact").val($("#DocumentContact").val().replace(phoneNumber, ""));
+    $("#DocumentContact").val($("#DocumentContact").val().replace(null, ""));
+    $("#DocumentContact").val($("#DocumentContact").val().replace("\n\n\n\n", "\n\n"));
+    $("#DocumentContact").val($("#DocumentContact").val().replace(/^\n+|\n+$/g, ""));
+
+    var newVal = value;
+    newVal = newVal.replace(/\//g, "");
+    newVal = newVal.replace(/\'/g, "");
+    newVal = newVal.replace(/\(/g, "");
+    newVal = newVal.replace(/\)/g, "");
+    newVal = newVal.replace(/\s/g, "");
+    newVal = newVal.replace(/\,/g, "");
+    newVal = newVal.replace(/\&/g, "");
+
+    $("#" + newVal).remove();
+  }
+  /****************************************************************************************************************************************************************************
+                                END POPULATE DOCUMENT CONTACT INFORMATION
+  ****************************************************************************************************************************************************************************/
+
+
+
+
+  /****************************************************************************************************************************************************************************
+                                POPULATE SUBMISSION CONTACT INFORMATION
+  ****************************************************************************************************************************************************************************/
+  function populateSubmissionContact(e) {
+    $("#SubmissionName").val(e.firstName + " " + e.lastName);
+    $("#SubmissionEmail").val(e.email);
+    (e.phoneNumber != null ? $("#SubmissionPhone").val(e.phoneNumber) : $("#SubmissionPhone").val("N/A"));
+  }
+  /****************************************************************************************************************************************************************************
+                                POPULATE SUBMISSION CONTACT INFORMATION
+  ****************************************************************************************************************************************************************************/
+
+
+
+
+
+  /****************************************************************************************************************************************************************************
+                                POPULATE COUNCIL DISTRICT NUMBER CONTACT INFORMATION
+  ****************************************************************************************************************************************************************************/
+  var alreadyRanCDN = false;
+  function populateCouncilDistrictNumber() {
+
+    $('#CouncilDistrictNumberSelect').selectize({
+      preload: true,
+      plugins: ['remove_button'],
+      delimiter: ';',
+      valueField: 'value',
+      labelField: 'text',
+      searchField: 'text',
+      create: false,
+      maxItems: null,
+      sortField: function (item1, item2) {
+        return item1.value - item2.value;
+      },
+      persist: true,
+      hideSelected: true,
+      render: {
+        option: function (item, escape) {
+          return '<div class="option" data-selectable data-value="' + item.value + '">' + escape(item.text) + '</div>'
+        }
+      },
+      onFocus: function () {
+        if ($(this.$control[0]).hasClass('requiredError')) {
+          var id = $(this.$input[0]).attr('id');
+
+          $('label[for="' + id + '-selectized"]').children('label').remove();
+          $(this.$control[0]).removeClass('requiredError');
+        }
+      },
+      onItemRemove: function (value, item) {
+        this.refreshOptions(true);
+      },
+      onDropdownOpen: function (dropdown) {
+
+      },
+      onChange: function (value) {
+        var self = this;
+
+        $("#CouncilDistrictNumber").val("");
+        $("#CouncilDistrictNumberHolder").val("");
+
+        $.each(value, function (index, val) {
+          if ($("#CouncilDistrictNumber").val() == "" || $("#CouncilDistrictNumber").val() == null) {
+            $("#CouncilDistrictNumber").val("CD " + val);
+            $("#CouncilDistrictNumberHolder").val(val + ",CD " + val);
+          }
+          else {
+            $("#CouncilDistrictNumber").val($("#CouncilDistrictNumber").val() + ", CD " + val);
+            $("#CouncilDistrictNumberHolder").val($("#CouncilDistrictNumberHolder").val() + ";" + val + ",CD " + val);
+          }
+        })
+      },
+      load: function (query, callback) {
+        var self = this;
+
+        $.when(
+          callback(councilDistrictNumbers)
+        ).then(function () {
+          $.each($("#CouncilDistrictNumberHolder").val().split(";"), function (index, val) {
+            self.addItem(val.split(",")[0]);
+          })
+        })
+      }
+    })
+  }
+  /****************************************************************************************************************************************************************************
+                                END POPULATE COUNCIL DISTRICT NUMBER CONTACT INFORMATION
+  ****************************************************************************************************************************************************************************/
+
+
+
+
+  /****************************************************************************************************************************************************************************
+                                POPULATE COUNCIL/COMMITTEES RECOMMENDATIONS
+  ****************************************************************************************************************************************************************************/
+  var alreadyRanCommittee = false;
+  function populateCommittees() {
+    if (alreadyRanCommittee == true) {
+      var docSelectize = $("#PreCommitteesSelect")[0].selectize;
+      docSelectize.clear();
+    }
+
+    $("#PreCommitteesSelect").empty();
+    $("#PreCommitteesSelect").append('<option value=""></option>');
+
+    $.each(committeeArray, function (index, com) {
+      if ($("#committees").val().indexOf(com.id) < 0) {
+        $("#PreCommitteesSelect").append('<option value="' + com.id + '">' + com.name + '</option>');
+      }
+    })
+
+    var sel = $("#PreCommitteesSelect");
+    var selected = sel.val();
+    var opts_list = sel.find('option');
+    opts_list.sort(function (a, b) { return $(a).text() > $(b).text() ? 1 : -1; });
+    sel.html('').append(opts_list);
+    sel.val("");
+
+    $('#PreCommitteesSelect').selectize({
+      /*sortField: function (item1, item2) {
+        return item1.text - item2.text;
+      },*/
+      sortField: {
+        field: 'text',
+        direction: 'asc'
+      },
+      persist: false,
+      hideSelected: true,
+      create: function (input) {
+        return {
+          value: input,
+          text: input
+        }
+      },
+      onChange: function (value) {
+        if ($("#PreCommitteesSelect-selectized").parent().hasClass('requiredError')) {
+          $("#PreCommitteesSelect-selectized").parent().removeClass('requiredError');
+
+          $('label[for="PreCommitteesSelect-selectized"]').children('label').remove();
+        }
+
+        if (alreadyRanCommittee == false) {
+          alreadyRanCommittee = true;
+
+          if ($("#committees").val() == "") {
+            $.each(committeeArray.filter(function (obj) {
+              return obj.name === $("#PreCommitteesSelect option:selected").text();
+            }), function (index, objs) {
+              var comVal = value + "|" + objs.name;
+              $("#committees").val(comVal);
+              $("#committeesHolder").val($("#committees").val());
+
+              $("#PreCommittees").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + value + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + objs.name + '</div></div><div onclick="addCommitteeBack(\'' + value + '\', \'' + objs.name + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+            })
+          }
+          else {
+            $.each(committeeArray.filter(function (obj) { return obj.name === $("#PreCommitteesSelect option:selected").text() }), function (index, objs) {
+              var comVal = ";" + value + "|" + objs.name;
+              $("#committees").val($("#committees").val() + comVal);
+              $("#committeesHolder").val($("#committees").val());
+
+              $("#PreCommittees").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + value + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + objs.name + '</div></div><div onclick="addCommitteeBack(\'' + value + '\', \'' + objs.name + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+            })
+          }
+
+          this.removeOption(this.items[0]);
+        }
+        else {
+          alreadyRanCommittee = false;
+        }
+      }
+    })
+  }
+
+  function addCommitteeBack(value, name) {
+    $("#PreCommitteesSelect")[0].selectize.addOption({ value: value, text: name });
+
+    var comArray = $("#committees").val().split(";");
+    var index = comArray.indexOf(value + "," + name);
+    comArray.splice(index, 1);
+    $("#committees").val(comArray.join(";"));
+    $("#committeesHolder").val($("#committees").val());
+
+    var newVal = value;
+    newVal = newVal.replace(/\//g, "");
+    newVal = newVal.replace(/\'/g, "");
+    newVal = newVal.replace(/\(/g, "");
+    newVal = newVal.replace(/\)/g, "");
+    newVal = newVal.replace(/\s/g, "");
+    newVal = newVal.replace(/\,/g, "");
+    newVal = newVal.replace(/\&/g, "");
+
+    $("#" + newVal).remove();
+
+    removeMeetingDates(value);
+  }
+
+  function addMeetingDates(committeeId) {
+    $.ajax({
+      type: "GET",
+      async: false,
+      url: url + "api/meetingtype/listforaddingitem" + "?committeeId=" + committeeId,
+      datatype: "json",
+      success: function (data) {
+        if (data.length > 0) {
+          $.each(data, function (index, meetType) {
+            $.ajax({
+              type: "GET",
+              async: false,
+              url: url + "api/meeting/listupcomingbymeetingtype/?meetingTypeId=" + meetType.id,
+              datatype: "json",
+              success: function (dateData) {
+                if (dateData.length > 0) {
+                  $.each(dateData, function (index, meetDate) {
+                    var date = new Date(meetDate.scheduledEvent.start);
+
+                    mDates.push(
+                      {
+                        "comId": committeeId, "meetDateId": meetDate.id, "meetDate": (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear()
+                      }
+                    )
+                  })
+                }
+              },
+              error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+              }
+            })
+          })
+        }
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("Error Occurred getting PopulateAdditionalMeetingTypes: " + errorThrown);
+      }
+    })
+  }
+
+  function removeMeetingDates(committeeId) {
+    $.ajax({
+      type: "GET",
+      async: false,
+      url: url + "api/meetingtype/listforaddingitem" + "?committeeId=" + committeeId,
+      datatype: "json",
+      success: function (data) {
+        if (data.length > 0) {
+          $.each(data, function (index, meetType) {
+            $.ajax({
+              type: "GET",
+              url: url + "api/meeting/listupcomingbymeetingtype/?meetingTypeId=" + meetType.id,
+              datatype: "json",
+              success: function (dateData) {
+                if (dateData.length > 0) {
+                  $.each(dateData, function (index, meetDate) {
+                    var date = new Date(meetDate.scheduledEvent.start);
+                  })
+
+                  if (mDates.length > 0) {
+                    mDates.join(",");
+                  }
+                }
+              },
+              error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+              }
+            })
+          })
+        }
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("Error Occurred getting PopulateAdditionalMeetingTypes: " + errorThrown);
+      }
+    })
+  }
+  /****************************************************************************************************************************************************************************
+                                END POPULATE COUNCIL/COMMITTEES RECOMMENDATIONS
+  ****************************************************************************************************************************************************************************/
+
+
+
+
+
+  /****************************************************************************************************************************************************************************
+                                POPULATE MEETING DATE RECOMMENDATIONS
+  ****************************************************************************************************************************************************************************/
+  var alreadyRanDates = false;
+  function populateMeetingDates(meetDates) {
+    var docSelectize = $("#PreMeetingDateSelect")[0].selectize;
+    if (docSelectize) {
+      docSelectize.clearOptions();
+      docSelectize.destroy();
+    }
+
+    $("#PreMeetingDateSelect").empty();
+    $("#PreMeetingDateSelect").append('<option value=""></option>');
+
+    $.each(meetDates, function (index, mDate) {
+      $("#PreMeetingDateSelect").append('<option data-comId="' + mDate.comId + '" value="' + mDate.meetDateId + '">' + mDate.meetDate + '</option>');
+    })
+
+    var sel = $("#PreMeetingDateSelect");
+    var selected = sel.val();
+    var opts_list = sel.find('option');
+    opts_list.sort(function (a, b) { return $(a).text() > $(b).text() ? 1 : -1; });
+    sel.html('').append(opts_list);
+    sel.val("");
+
+    $('#PreMeetingDateSelect').selectize({
+      sortField: function (item1, item2) {
+        return item1.text - item2.text;
+      },
+      persist: false,
+      hideSelected: true,
+      create: function (input) {
+        return {
+          value: input,
+          text: input
+        }
+      },
+      onChange: function (value) {
+        if (alreadyRanDates == false) {
+          alreadyRanDates = true;
+
+          if ($("#meetingDates").val() == "") {
+            $.each(mDates.filter(function (obj) {
+              return obj.meetDate === $("#PreMeetingDateSelect option:selected").text();
+            }), function (index, objs) {
+              var comVal = objs.comId + "," + value + "," + objs.meetDate;
+              $("#meetingDates").val(comVal);
+
+              $("#PreMeetingDates").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + value + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + objs.meetDate + '</div></div><div onclick="addDatesBack(\'' + objs.comId + '\',\'' + value + '\', \'' + objs.meetDate + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+            })
+          }
+          else {
+            $.each(mDates.filter(function (obj) { return obj.meetDate === $("#PreMeetingDateSelect option:selected").text() }), function (index, objs) {
+              var comVal = ";" + objs.comId + "," + value + "," + objs.meetDate;
+              $("#meetingDates").val($("#meetingDates").val() + comVal);
+
+              $("#PreMeetingDates").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + value + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + objs.meetDate + '</div></div><div onclick="addDatesBack(\'' + objs.comId + '\',\'' + value + '\', \'' + objs.meetDate + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+            })
+          }
+
+          this.removeOption(this.items[0]);
+        }
+        else {
+          alreadyRanDates = false;
+        }
+      }
+    })
+  }
+
+  function addDatesBack(comId, value, meetDate) {
+    $("#PreMeetingDateSelect")[0].selectize.addOption({ value: value, text: meetDate });
+
+    var comArray = $("#meetingDates").val().split(";");
+    var index = comArray.indexOf(comId + "," + value + "," + meetDate);
+    comArray.splice(index, 1);
+    $("#meetingDates").val(comArray.join(";"));
+
+    var newVal = value;
+    newVal = newVal.replace(/\//g, "");
+    newVal = newVal.replace(/\'/g, "");
+    newVal = newVal.replace(/\(/g, "");
+    newVal = newVal.replace(/\)/g, "");
+    newVal = newVal.replace(/\s/g, "");
+    newVal = newVal.replace(/\,/g, "");
+    newVal = newVal.replace(/\&/g, "");
+
+    $("#" + newVal).remove();
+  }
+  /****************************************************************************************************************************************************************************
+                                END POPULATE MEETING DATES INFORMATION
+  ****************************************************************************************************************************************************************************/
+
+
+
+  function markTask(choice, confirmationPrompt, approveRejectOption) {
+    var useCustom = false;
+    var route = true;
+    var copiedAttachments = [];
+
+    switch ($("#WFStep").val()) {
+      case "Referral Clerk Council File":
+        if (choice.toLowerCase() == "add item to existing council file") {
+          systemItemId = $("#SystemItem").val();
+          copiedAttachments = getDocumentsList({ formInstanceId: _FormInstanceId });
+
+          $("#ItemTitle").removeClass('requiredTextarea');
+
+          copySystemItemAttachments(systemItemId, copiedAttachments);
+        }
+        else if (choice.toLowerCase() == "reject") {
+          $("#Rejected").val(`<p style="font-size:14pt;font-weight:bold;color:red;">REJECTED</p>`);
+
+          $("#ItemTitle").addClass('requiredTextarea');
+
+          route = validateFieldsForRouting();
+        }
+        else {
+          $("#ItemTitle").addClass('requiredTextarea');
+
+          route = validateFieldsForRouting();
+        }
+
+        break;
+      case "Department Approver":
+        if (choice.toLowerCase() == "approve") {
+          var d = new Date();
+          var day = d.getDate();
+          var month = d.getMonth() + 1;
+          var year = d.getFullYear();
+          const formattedDate = moment(d).format('MM/DD/YYYY');
+          $("#IndexApproverReceivedDate").val(formattedDate);
+
+          var expDate = new Date(month + "/" + day + "/" + year);
+          var eDay = expDate.getDate();
+          var eMonth = expDate.getMonth() + 1;
+          var eYear = expDate.getFullYear() + 2;
+          $("#ExpirationDate").val(eMonth + "/" + eDay + "/" + eYear);
+        }
+        else if (choice.toLowerCase() == "reject") {
+          $("#Rejected").val(`<p style="font-size:14pt;font-weight:bold;color:red;">REJECTED</p>`);
+        }
+
+        break;
+      case "Indexer":
+        if (choice.toLowerCase() == "reject") {
+          $("#Rejected").val(`<p style="font-size:14pt;font-weight:bold;color:red;">REJECTED</p>`);
+        }
+
+        break;
+      case "Referral Clerk":
+        if (choice.toLowerCase() == "refer to committee") {
+          route = validateCommitteeCouncil();
+
+          if (route == true) {
+            if ($("#ReferredDate").val() == "" || $("#ReferredDate").val() == null) {
+              var referredDate = populateDate();
+              $("#ReferredDate").val(referredDate);
+              $("#ReferralDateSearch").val(populateReferralSearchDate());
+            }
+
+            $.each($("#committeesHolder").val().split(";"), function (index, val) {
+              if (!$("#ReferredTo").val().indexOf(val.split("|")[1]) >= 0) {
+                if ($("#ReferredTo").val() == "" || $("#ReferredTo").val() == null) {
+                  $("#ReferredTo").val(val.split("|")[1]);
+                }
+                else {
+                  $("#ReferredTo").val($("#ReferredTo").val() + "; " + val.split("|")[1]);
+                }
+              }
+
+              if ($("#LegislativeAssistants").val() == 0) {
+                $.each(userGroups, function (index, group) {
+                  console.log('LA VAL', val)
+                  console.log('group', group.id)
+                  if (group.name.toLowerCase().trim() == "la_" + val.split("|")[1].toLowerCase().trim()) {
+                    $("#LegislativeAssistants").val(group.id);
+                  }
+                })
+              }
+            })
+
+
+            filterLAEmails();
+            $("#CurrentStatus").val(`Pending in ${$("#ReferredTo").val()}`);
+          }
+        }
+        else if (choice.toLowerCase() == "complete without referral - notify la") {
+
+          filterLAEmails();
+        } else if (choice.toLowerCase() == "complete without referral - notify calendar") {
+
+        } else if (choice.toLowerCase() == "complete without referral - no notifications") {
+
+
+
+        }
+
+        else if (choice.toLowerCase() == "refer to council") {
+          route = validateCommitteeCouncil();
+
+          if (route == true) {
+            if ($("#ReferredDate").val() == "" || $("#ReferredDate").val() == null) {
+              var referredDate = populateDate();
+              $("#ReferredDate").val(referredDate);
+              $("#ReferralDateSearch").val(populateReferralSearchDate());
+            }
+
+            //DO NOT DELETE REFERRED TO VALUE FROM EXISTING ITEM
+            // if ($("#ReferredTo").val() == "" || $("#ReferredTo").val() == null) {
+            //   $("#ReferredTo").val("");
+            // }
+
+            $("#CurrentStatus").val(`Pending in City Council`);
+          }
+
+        }
+        else if (choice.toLowerCase() == "reject") {
+          $("#Rejected").val('<span style="font-size:14pt;font-weight:bold;color:red;">REJECTED</span>');
+        }
+
+        if (choice.toLowerCase() != "peer review") {
+          route = validateFieldsForRouting();
+        }
+        else {
+          $("#WFStep").val("Peer Review");
+        }
+
+        if ($("#existingMovers").val()) {
+          if ($("#movers").val()) {
+            $("#movers").val($("#movers").val() + ", " + $("#existingMovers").val());
+          } else {
+            $("#movers").val($("#existingMovers").val());
+          }
+
+        }
+
+        if ($("#existingSeconders").val()) {
+          if ($("#seconders").val()) {
+            $("#seconders").val($("#seconders").val() + ", " + $("#existingSeconders").val());
+          } else {
+            $("#seconders").val($("#existingSeconders").val());
+          }
+
+        }
+        break;
+
+      case "Legislative Assistants":
+        if (choice.toLowerCase() != "peer review" && choice.toLowerCase() != "return to referral clerk" && choice.toLowerCase() != "" && choice.toLowerCase() != "complete without scheduling") {
+          var currentLegislativeAssistants = $("#LegislativeAssistants").val();
+
+          $("#LegislativeAssistants").val(0);
+
+          $.each($("#committeesHolder").val().split(";"), function (index, val) {
+            if ($("#LegislativeAssistants").val() == 0) {
+              $.each(userGroups, function (index, group) {
+                if (group.name.toLowerCase() == "la_" + val.split("|")[1].toLowerCase() && group.id != currentLegislativeAssistants) {
+                  $("#LegislativeAssistants").val(group.id);
+                }
+              })
+
+              if ($("#LegislativeAssistants").val() == 0) {
+                var comArr = $("#committeesHolder").val().split(";");
+                var index = comArr.indexOf(val);
+                comArr.splice(index, 1);
+                $("#committeesHolder").val(comArr.join(";"));
+
+                choice = "Hidden_Add to Committee Meeting Once";
+              }
+            }
+          })
+
+          route = validateFieldsForRouting();
+
+          if (route == true) {
+            var d = new Date($("#meetingDateSelect option:selected").text());
+            var day = d.getDate();
+            var month = d.getMonth() + 1;
+            var year = d.getFullYear();
+
+            var expDate = new Date(month + "/" + day + "/" + year);
+            var eDay = expDate.getDate();
+            var eMonth = expDate.getMonth() + 1;
+            var eYear = expDate.getFullYear() + 2;
+            $("#ExpirationDate").val(eMonth + "/" + eDay + "/" + eYear);
+          }
+
+          if ($("#existingMovers").val()) {
+            if ($("#movers").val()) {
+              $("#movers").val($("#movers").val() + ", " + $("#existingMovers").val());
+            } else {
+              $("#movers").val($("#existingMovers").val());
+            }
+
+          }
+
+          if ($("#existingSeconders").val()) {
+            if ($("#seconders").val()) {
+              $("#seconders").val($("#seconders").val() + ", " + $("#existingSeconders").val());
+            } else {
+              $("#seconders").val($("#existingSeconders").val());
+            }
+
+          }
+        }
+        else {
+          $("#WFStep").val(choice);
+        }
+
+
+
+        if ($("#existingMovers").val()) {
+          if ($("#movers").val()) {
+            $("#movers").val($("#movers").val() + ", " + $("#existingMovers").val());
+          } else {
+            $("#movers").val($("#existingMovers").val());
+          }
+
+        }
+
+        if ($("#existingSeconders").val()) {
+          if ($("#seconders").val()) {
+            $("#seconders").val($("#seconders").val() + ", " + $("#existingSeconders").val());
+          } else {
+            $("#seconders").val($("#existingSeconders").val());
+          }
+
+        }
+
+        break;
+      case "Calendar":
+        if (choice.toLowerCase() == "add to council meeting") {
+          route = validateFieldsForRouting();
+        }
+        else if (choice.toLowerCase() == "peer review") {
+          $("#WFStep").val("Peer Review");
+        }
+
+
+        if ($("#existingMovers").val()) {
+          if ($("#movers").val()) {
+            $("#movers").val($("#movers").val() + ", " + $("#existingMovers").val());
+          } else {
+            $("#movers").val($("#existingMovers").val());
+          }
+
+        }
+
+        if ($("#existingSeconders").val()) {
+          if ($("#seconders").val()) {
+            $("#seconders").val($("#seconders").val() + ", " + $("#existingSeconders").val());
+          } else {
+            $("#seconders").val($("#existingSeconders").val());
+          }
+
+        }
+
+        break;
+    }
+
+    if (choiceSaving) {
+      return;
+    }
+
+    choiceSaving = true;
+
+    if (confirmationPrompt) {
+      if (choice.trim() === "Peer Review" && _CurrentGroupUsers.length === 0) {
+        showPeerReviewModal();
+
+        choiceSaving = false;
+
+        return;
+      }
+
+      $('#taskConfirmationTitle').text('Update Task - ' + choice);
+      $('#taskConfirmationSubTitle').text('This task will route to the selected workflow step. This action cannot be undone.');
+
+      if (approveRejectOption) {
+        $('#approveRejectOption').show();
+        $('#commentTypeArea').hide();
+      }
+      else {
+        $('#approveRejectOption').hide();
+        $('#commentTypeArea').show();
+      }
+
+      $('#TaskConfirmationModal').modal({ backdrop: 'static', keyboard: false });
+
+      $('#confirmationPromptUpdateTask').click(function () {
+        saveTaskMark(_TaskId, choice, $('#taskConfirmationComment').val(), confirmationPrompt, approveRejectOption);
+      });
+    }
+    else if (route == true) {
+      saveTaskMark(_TaskId, choice, $('#newCommentText').val(), false, false);
+    }
+    else {
+      choiceSaving = false;
+    }
+  }
+
+  function getDocumentsList(pData) {
+    var copiedAttachments = [];
+
+    $.ajax({
+      type: "GET",
+      url: url + "api/Document/ListForDropdown",
+      data: pData,
+      datatype: "json",
+      async: false,
+      success: function (attachments) {
+        copiedAttachments = attachments;
+
+        return copiedAttachments;
+      }
+    })
+
+    return copiedAttachments;
+  }
+
+  function copySystemItemAttachments(newSystemitemId, copiedAttachmentList) {
+    var copiedAttachments = getDocumentsList({ systemItemId: newSystemitemId });
+
+    var pData = {
+      systemItemId: newSystemitemId,
+      attachments: []
+    };
+
+    var d = new Date();
+    var day = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+
+    if (copiedAttachmentList.length > 0) {
+      $.each(copiedAttachmentList, function (index, fAtt) {
+        var add = true;
+
+        $.each(copiedAttachments, function (index, sAtt) {
+          if (fAtt.name.toLowerCase() == sAtt.name.toLowerCase()) {
+            add = false;
+          }
+        })
+
+        if (add == true) {
+          pData.attachments.push({
+            id: parseInt(fAtt.id),
+            documentContext: parseInt(fAtt.documentContext)
+          });
+        }
+      });
+
+      if (pData.attachments.length > 0) {
+        $.post('/api/Document/CopyAttachments', pData, function () {
+          $("#AttachmentsAdded").val("Copied");
+        }).fail(function (jqXHR, status, error) {
+
+        })
+      }
+    }
+  }
+
+  function populateItemTypeInformation() {
+    $("#ItemType").val($("#systemItemTypeId").val());
+    $("#ItemTypeHolder").val($("#systemItemTypeId").val());
+  }
+
+  function displayOrdPursuantTo() {
+    if ($("#NewspaperPublish option:selected").text() == "Yes") {
+      $("#ROW_HiddenOrdPursuantTo").show();
+    }
+    else {
+      $("#ROW_HiddenOrdPursuantTo").hide();
+    }
+  }
+
+  function populateOtherCouncilFileHolders(val) {
+    $("#CouncilFileNumber").val(val);
+    $("#CouncilFileNo").val(val);
+  }
+
+  function newOrExistingCouncilFile(value) {
+    $("#NewOrExistingCouncilFile").val(value);
+
+    $("#SystemItem").val("");
+
+    if (value == "Existing") {
+      ShowFields("searchItems");
+    }
+    else {
+      HideFields("searchItems");
+    }
+  }
+
+  $("#searchItems").click(function () {
+    if ($("#CouncilFile").val() != "" && $("#CouncilFile").val() != null) {
+      $("#CouncilFileNumber").val("");
+
+      $("body").append("<div id='loadingSplash' name='loadingSplash' class='loadingSplash'><div id='loading' name='loading' class='loading'></div></div>");
+
+      var filteredItems = [];
+
+      var splitCFN = $("#CouncilFileNo").val().split(",");
+
+      $.each(splitCFN, function (index, val) {
+        if ($("#CouncilFileNumber").val() == "" || $("#CouncilFileNumber").val() == null) {
+          $("#CouncilFileNumber").val(val);
+        }
+        else {
+          $("#CouncilFileNumber").val("," + val);
+        }
+      })
+
+      var searchField = $("#CouncilFileNo").val().split(",")[0];
+      var systemItemId;
+
+      $.ajax({
+        type: "GET",
+        async: true,
+        url: url + "api/systemitem/ListItemsFilterByCustomFields?CouncilFileNumber=" + searchField,
+        datatype: "text",
+        success: function (data) {
+          systemItemId = data[0].id;
+          $("#SystemItem").val(systemItemId);
+
+          $.ajax({
+            type: "GET",
+            async: true,
+            url: url + "api/systemitem/get?id=" + systemItemId,
+            datatype: "json",
+            success: function (itemData) {
+              console.log('existing item data', itemData);
+              $("#ItemTitle").val(itemData.title.replace(/(<([^>]+)>)/g, "").replace(/[\n\r]+/g, "").replace(/&rsquo;/g, "'").replace(/&#39;/g, "'").replace(/&nbsp;/g, " ").trim());
+              $.each(itemData.customFieldValues, function (index, cFields) {
+                if ((cFields != "") && (cFields !== null)) {
+                  switch (cFields.customFieldDefinition.name.toLowerCase()) {
+                    case "referencenumber":
+                      $("#ReferenceNumber").val(cFields.value);
+
+                      break;
+                    case "expirationdate":
+                      $("#ExpirationDate").val(cFields.value);
+
+                      break;
+                    case "indexapproverreceiveddate":
+
+                      break;
+                    case "timelimitdate":
+                      //Don't change the values if they have already been set earlier in the workflow
+                      if ($("#NumberOfDays").val() !== null || $("#NumberOfDays").val() !== "") {
+                        break;
+                      } else {
+                        $("#TimeLimitDate").val(cFields.value);
+
+                        break;
+                      }
+
+                    case "lastday":
+                      //Don't change the values if they've been set earlier in the workflow
+                      if ($("#NumberOfDays").val() !== null || $("#NumberOfDays").val() !== "") {
+                        break;
+                      } else {
+                        $("#LastDay").val(cFields.value);
+
+                        break;
+                      }
+
+                    case "pursuantto":
+                      //Only update this dropdown if it hasn't been chosen previously in the workflow
+                      if ($("#TimeLimitSelectHolder").val() === "" || $("#TimeLimitSelectHolder").val() === null) {
+                        $("#TimeLimitPursuantToSelect").val(cFields.value);
+                      }
+
+                      break;
+                    case "councildistrictnumber":
+                      var filteredCD = [];
+
+                      $.each(cFields.value.split(", "), function (index, cd) {
+                        var item = councilDistrictNumbers.filter(function (obj) { return obj.text === cd; });
+                        if (item != "") {
+                          $("#CouncilDistrictNumberSelect")[0].selectize.addItem(item[0].value);
+                        }
+                      })
+
+                      break;
+
+                    case "referredto":
+                      $("#ReferredTo").val(cFields.value);
+                      break;
+
+                    case "referraldatesearch":
+                      $("#ReferralDateSearch").val(cFields.value);
+                      break;
+
+                    case "currentstatus":
+                      $("#currentStatusNotificationHolder").val(cFields.value);
+                      $("#currentStatusNotification").val(cFields.value);
+                      //set current status equal to itself so it doesn't get cleared out when no referrals/notifications selected
+                      $("#CurrentStatus").val(cFields.value);
+                      break;
+
+
+                    case "movers":
+                      //put all movers in a hidden input for use later
+
+                      console.log('movers value', cFields.value);
+                      $("#movers").val(cFields.value);
+
+                      break;
+
+                    case "seconders":
+                      console.log('seconders value', cFields.value);
+                      //same process as movers above
+                      $("#seconders").val(cFields.value);
+                      break;
+                  }
+                }
+              })
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+            }
+          })
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+          alert("Error Occurred in BuildItemSearchResult: " + errorThrown);
+        }
+      })
+    }
+    else {
+      var requiredField = '<label class="requiredErrorLbl">This Field is Required</label>';
+
+      $("#CouncilFile").addClass("requiredError");
+
+      $('label[for="CouncilFile"]').append(requiredField);
+
+      $("#CouncilFile").focus();
+    }
+  })
+
+  function getWorkflowTask() {
+    var taskId = document.URL.split("/")[document.URL.split("/").length - 1];
+
+    $.ajax({
+      type: "Get",
+      url: url + "api/workflow_Task/get/" + taskId,
+      datatype: "json",
+      success: function (data) {
+        if (data.reviewObjectType == 3) {
+          getWorkflowInstance(data.workflowInstanceId);
+        }
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("Error Occurred getting Workflow Tasks: " + errorThrown);
+      }
+    })
+  }
+
+  function getWorkflowInstance(wfInstanceId) {
+    var systemItemId = 0;
+
+    $.ajax({
+      type: "Get",
+      url: url + "api/workflow_instance/get/" + wfInstanceId,
+      datatype: "json",
+      success: function (data) {
+        $.each(data.data.variables, function (index, variable) {
+          if (variable.name == "SystemItem" && variable.value != null) {
+            var systemItemId = variable.value;
+            $("#SystemItem").val(systemItemId);
+
+            var copyAttachmentsList = getDocumentsList({ formInstanceId: _FormInstanceId });
+
+            copySystemItemAttachments(systemItemId, copyAttachmentsList);
+          }
+        })
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("Error Occurred getting Workflow Instance: " + errorThrown);
+      }
+    })
+  }
+
+  function populateCEQAAppeal() {
+    //const CEQADate = moment().format("MM/DD/YYYY");
+    if ($("#ceqaCheckbox").is(':checked')) {
+      $("#CEQA").val("New CEQA Appeal " + $("#IndexApproverReceivedDate").val());
+      $("#CEQAHolder").val("New CEQA Appeal " + $("#IndexApproverReceivedDate").val());
+      $("#CEQACheckHolder").val('true');
+    } else {
+      $("#CEQA").val('');
+      $("#CEQACheckHolder").val('false');
+    }
+  }
+
+  function filterLAEmails() {
+    //Get value of PreCommittees and use it to filter list of LA_ emails to only go to that committee
+    //Tie this to the Recommended Council/Committee output text area so any time it changes, we add to the list of emails.
+    //laEmails will be an array of all filtered emails that is converted to a string later
+    $("#departmentLAEmails").val("");
+    let laEmails = "";
+    //Get text content of div holding selected committees
+    const divContent = $("#PreCommittees").text();
+    if (divContent) {
+      //Split the X out and grab names
+      const matchedCommittees = divContent.split("X");
+      //sometimes there is an empty string in the array, make sure it's taken out of the array.
+      matchedCommittees.forEach((element) => {
+        if (element === "") {
+          matchedCommittees.splice(matchedCommittees.indexOf(element), 1);
+        }
+      });
+      console.log(matchedCommittees);
+      //get only the LA_ user groups
+      const laGroups = userGroups.filter((group) => group.name.includes('LA_'));
+
+      //loop through the array
+      matchedCommittees.forEach((committee) => {
+        //try to find a userGroup that is LA_<<committee name>>
+        laGroups.forEach((group) => {
+          const groupName = group.name.split("_")[1];
+          if (group.name.split("_")[1] == committee) {
+            //when a match is found, get all user emails
+            group.users.forEach((user) => {
+              if (laEmails === "") {
+                laEmails = user.email;
+              } else {
+                laEmails = laEmails + "," + user.email;
+              }
+            })
+          }
+
+        })
+      });
+
+      //if no department is chosen, add all LA to email list
+    } else {
+      laEmails = [
+        "Armando.Bencomo@lacity.org",
+        "Erika.Pulst@lacity.org",
+        "Keyonna.Kidd@lacity.org",
+        "Melinda.Novoa@lacity.org",
+        "Keyonna.Kidd@lacity.org",
+        "Adam.Lid@lacity.org",
+        "Mandy.Morales@lacity.org",
+        "andrew.suh@lacity.org",
+        "Michael.Espinosa@lacity.org",
+        "Juan.L.Verano@lacity.org",
+        "candy.rosales@lacity.org",
+        "Daniel.Luna@lacity.org",
+        "Isabel.Onate@lacity.org",
+        "Eric.Villanueva@lacity.org",
+      ].toString();
+    }
+
+
+    $("#departmentLAEmails").val(laEmails);
+    console.log($("#departmentLAEmails").val());
+  }
+
+  function saveTimeLimitValues() {
+    //set a holder value to prevent updates when "existing council file" is searched at indexer step 
+    if ($("#TimeLimit_Yes").prop('checked')) {
+      $("#TimeLimitSelectHolder").val($("#TimeLimitPursuantToSelect").val());
+      $("#PursuantTo").val($("#TimeLimitPursuantToSelect").val() + " " + $("#CharterSectionNumber").val());
+      $("#PursuantToHolder").val($("#TimeLimitPursuantToSelect").val() + " " + $("#CharterSectionNumber").val());
+      $("#NumberOfDaysHolder").val($("#NumberOfDays").val());
+      $("#LastDayHolder").val($("#LastDay").val());
+    }
+
+  }
+
+  function loadTimeLimitValues() {
+    if ($("#TimeLimit_CheckboxValue").val() === 'Yes') {
+      //set the value of Time Limit - Pursuant To dropdown
+      if ($("#TimeLimitSelectHolder").val()) {
+        $("#TimeLimitPursuantToSelect").val($("#TimeLimitSelectHolder").val());
+      }
+
+      //set the value of the Code input
+      if ($("#PursuantToHolder").val()) {
+        const splitValues = document.getElementById('PursuantToHolder').value.split(' Code');
+        const dropdownText = splitValues[0];
+        const codeText = splitValues[1];
+
+        $("#CharterSectionNumber").val(codeText);
+      }
+
+      //set the value of Last Day
+      if ($("#LastDayHolder").val()) {
+        $("#LastDay").val($("#LastDayHolder").val());
+      }
+
+      if ($("#NumberOfDaysHolder").val()) {
+        $("#NumberOfDays").val($("#NumberOfDaysHolder").val());
+      }
+    }
+  }
+
+  /****************************************************************************************************************************************************************************
+                                                                  POPULATE MOVER INFORMATION
+      ****************************************************************************************************************************************************************************/
+  var alreadyRanMover = false;
+  function populateMover() {
+    alreadyRanMover = true;
+    var docSelectize = $("#PreMoverSelect")[0].selectize;
+    if (docSelectize) {
+      docSelectize.clearOptions();
+      docSelectize.destroy();
+    }
+
+    //get list of all members - global array populated in getCommittees();
+    $.each(members, function (index, member) {
+
+      const memberName = member.fullName;
+      //if the name doesn't exist in the list, add it.  Otherwise do nothing
+      for (i = 0; i < document.getElementById('PreMoverSelect').length; i++) {
+        if (document.getElementById('PreMoverSelect')[i].value === memberName) return;
+      }
+      $("#PreMoverSelect").append(`<option value="${memberName}">${memberName}</option>`);
+    })
+
+    var sel = $("#PreMoverSelect");
+    var selected = sel.val();
+    var opts_list = sel.find('option');
+    opts_list.sort(function (a, b) { return $(a).text() > $(b).text() ? 1 : -1; });
+    sel.html('').append(opts_list);
+    sel.val("");
+
+    $('#PreMoverSelect').selectize({
+      sortField: {
+        field: 'text',
+        direction: 'asc'
+      },
+      persist: false,
+      hideSelected: true,
+      create: function (input) {
+        return {
+          value: input,
+          text: input
+        }
+      },
+
+      onChange: function (value) {
+        var mover = this;
+
+        //strip any illegal characters from the name
+        //this is how we are getting the id of the div appended to $("#PreMover")
+        var newVal = value;
+        newVal = newVal.replaceAll(/\//g, "");
+        newVal = newVal.replaceAll(/\'/g, "");
+        newVal = newVal.replaceAll(/\(/g, "");
+        newVal = newVal.replaceAll(/\)/g, "");
+        newVal = newVal.replaceAll(/\s/g, "");
+        newVal = newVal.replaceAll(/\,/g, "");
+        newVal = newVal.replaceAll(/\&/g, "");
+        newVal = newVal.replaceAll(/\./g, "");
+
+        //add the member to the shown box of movers
+        //$("#PreMover").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + newVal + '"><div style="width: 500px; display: inline-block;"><div style="display: block;">' + newVal + '</div></div><div onclick="addMoverBack(\'' + newVal + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+        if (value !== '' && newVal !== '') {
+
+          const valArray = [value, newVal];
+
+          const idToRemove = `remove${newVal}`;
+
+          $("#PreMover").append(`
+        <div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="${newVal}">
+          <div style="width: 500px; display: inline-block;">
+            <div style="display: block;">
+              ${value}
+            </div>
+          </div>
+        <div id="${idToRemove}" class="clear" style="display: inline-block; vertical-align: top; cursor: pointer;">
+          X
+        </div>
+        `);
+
+          //Have to add onclick function this way to protect punctuation in certain names
+          document.getElementById(idToRemove).setAttribute("onclick", `addMoverBack("${valArray}")`);
+
+
+          //add the value to the array of movers already displayed
+          existingMovers.push(value);
+
+
+          //remove the value from the selectize list
+          $("#PreMoverSelect")[0].selectize.removeOption(value);
+
+          //Prevent the mover from also being a seconder
+          $("#PreSeconderSelect")[0].selectize.removeOption(value);
+        }
+
+        //Now take all elements in the array and make that the value of $("#existingmovers")
+        $("#existingMovers").val("");
+
+        $("#existingMovers").val(existingMovers.join(", "));
+
+      }
+    })
+  };
+
+  //add name back to the selectize list when it's deleted from the display box
+  function addMoverBack(str) {
+    console.log('add mover back value', str);
+
+    const val = str.split(",")[0];
+    const newVal = str.split(",")[1];
+    console.log(val);
+    console.log(newVal);
+    $("#PreMoverSelect")[0].selectize.addOption({ value: val, text: val });
+    $("#PreSeconderSelect")[0].selectize.addOption({ value: val, text: val });
+
+    //split out out existingMovers array and reset the value of $("#movers")
+    const index = existingMovers.indexOf(val);
+    existingMovers.splice(index, 1);
+    $("#existingMovers").val(existingMovers.join(", "));
+
+    $("#" + newVal).remove();
+  };
+
+
+  //When the fields load for the first time, populate any previously stored mover information into the display box and remove those choices from the selectize
+  function fillMoverField() {
+    console.log('fill mover ran');
+    if (!$("#existingMovers").val()) return;
+
+    //get the list of existing movers from hidden input
+    const importedMovers = $("#existingMovers").val().split(", ");
+    console.log('movers val', importedMovers);
+    //clear out any lingering values
+    $("#PreMover").empty();
+
+    // //put them in a global variable to be tracked during selectize onchange event
+    // for (i = 0; i < importedMovers.length; i++) {
+    //   if (importedMovers[i] == "" || importedMovers[i] == null || importedMovers[i] == undefined) {
+    //     continue;
+    //   } else {
+    //     existingMovers.push(importedMovers[i]);
+    //   }
+    // }
+
+    // console.log('EXISTING MOVERS', existingMovers)
+
+    //add everything from $("#movers") to the display box and remove from selectize list
+    importedMovers.forEach((element) => {
+      if (element == "" || element == null || element == undefined) {
+        return;
+      }
+      console.log('ADDING TO SELECTIZE', element);
+      $("#PreMoverSelect")[0].selectize.addItem(element, false);
+      // $("#PreMoverSelect")[0].selectize.removeOption(element);
+      // $("#PreSeconderSelect")[0].selectize.removeOption(element);
+      // $("#PreMover").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + element.trim() + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + element.trim() + '</div></div><div onclick="addMoverBack(\'' + element.trim() + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+
+      // //add these back into $("#movers") to prevent the values from being cleared if they don't change
+      // if ($("#movers").val() === "") {
+      //   $("#movers").val(element);
+      // } else {
+      //   $("#movers").val($("#movers").val() + ", " + element);
+      // }
+    });
+  };
+  /****************************************************************************************************************************************************************************
+                                                              END POPULATE MOVER INFORMATION
+  ****************************************************************************************************************************************************************************/
+
+
+
+
+
+  /****************************************************************************************************************************************************************************
+                                                              POPULATE SECONDER INFORMATION
+  ****************************************************************************************************************************************************************************/
+  var alreadyRanSeconder = false;
+  function populateSecond() {
+    alreadyRanSeconder = true;
+
+    var docSelectize = $("#PreSeconderSelect")[0].selectize;
+    if (docSelectize) {
+      docSelectize.clearOptions();
+      docSelectize.destroy();
+    }
+
+    $.each(members, function (index, member) {
+      const memberName = member.fullName;
+      const preSeconderSelect = document.getElementById('PreSeconderSelect');
+      for (i = 0; i < preSeconderSelect.length; i++) {
+        if (preSeconderSelect[i].value === memberName) return;
+      }
+
+      $("#PreSeconderSelect").append(`<option value="${memberName}">${memberName}</option>`);
+    })
+
+    var sel = $("#PreSeconderSelect");
+    var selected = sel.val();
+    var opts_list = sel.find('option');
+    opts_list.sort(function (a, b) { return $(a).text() > $(b).text() ? 1 : -1; });
+    sel.html('').append(opts_list);
+    sel.val("");
+
+    $('#PreSeconderSelect').selectize({
+      sortField: {
+        field: 'text',
+        direction: 'asc'
+      },
+      persist: false,
+      hideSelected: true,
+      create: function (input) {
+        return {
+          value: input,
+          text: input
+        }
+      },
+
+      onChange: function (value) {
+        var seconder = this;
+
+        var newVal = value;
+        newVal = newVal.replaceAll(/\//g, "");
+        newVal = newVal.replaceAll(/\'/g, "");
+        newVal = newVal.replaceAll(/\(/g, "");
+        newVal = newVal.replaceAll(/\)/g, "");
+        newVal = newVal.replaceAll(/\s/g, "");
+        newVal = newVal.replaceAll(/\,/g, "");
+        newVal = newVal.replaceAll(/\&/g, "");
+        newVal = newVal.replaceAll(/\./g, "");
+
+        //add the member to the shown box of seconders
+        //$("#PreSeconder").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + newVal + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + newVal + '</div></div><div onclick="addSeconderBack(\'' + newVal + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+
+        if (value !== '' && newVal !== '') {
+
+          const valArray = [value, newVal];
+
+          const idToRemove = `remove${newVal}`;
+
+          $("#PreSeconder").append(`
+        <div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="${newVal}">
+          <div style="width: 500px; display: inline-block;">
+            <div style="display: block;">
+              ${value}
+            </div>
+          </div>
+        <div id="${idToRemove}" class="clear" style="display: inline-block; vertical-align: top; cursor: pointer;">
+          X
+        </div>
+        `);
+
+          //Have to add onclick function this way to protect punctuation in certain names
+          document.getElementById(idToRemove).setAttribute("onclick", `addSeconderBack("${valArray}")`);
+
+          //add the value to the array of seconders already displayed
+          existingSeconders.push(value);
+
+          //remove the value from the selectize list
+          $("#PreSeconderSelect")[0].selectize.removeOption(value);
+
+          //Prevent the seconder from also being a mover
+          $("#PreMoverSelect")[0].selectize.removeOption(value);
+        }
+
+        //Now take all elements in the array and make that the value of $("#existingSeconders")
+        $("#existingSeconders").val("");
+
+        $("#existingSeconders").val(existingSeconders.join(", "));
+      }
+    })
+  }
+
+  function addSeconderBack(str) {
+    console.log('add seconder back value ', str);
+
+    const val = str.split(",")[0];
+    const newVal = str.split(",")[1];
+
+    $("#PreMoverSelect")[0].selectize.addOption({ value: val, text: val });
+    $("#PreSeconderSelect")[0].selectize.addOption({ value: val, text: val });
+
+    const index = existingSeconders.indexOf(val);
+    existingSeconders.splice(index, 1);
+    $("#existingSeconders").val(existingSeconders.join(", "));
+
+    $("#" + newVal).remove();
+  };
+
+  //WE ARE NOT PULLING IN SECONDERS FROM EXISTING COUNCIL FILE, EACH SUBMITTAL WILL START FRESH
+  //When the fields load for the first time, populate any previously stored seconder information into the display box and remove those choices from the selectize
+  function fillSeconderField() {
+    if (!$("#existingSeconders").val()) return;
+
+    //get the list of existing seconders from hidden input
+    const importedSeconders = $("#existingSeconders").val().split(", ");
+    console.log('seconders val', importedSeconders);
+    //make sure there aren't any lingering values in display
+    $("#PreSeconder").empty();
+
+    // //put them in a global variable to be tracked during selectize onchange event
+    // for (i = 0; i < importedSeconders.length; i++) {
+    //   if (importedSeconders[i] == "" || importedSeconders[i] == null || importedSeconders[i] == undefined) {
+    //     continue;
+    //   } else {
+    //     existingSeconders.push(importedSeconders[i]);
+    //   }
+    // }
+    // console.log('EXISTING SECONDERS', existingSeconders);
+
+
+    //add everything from $("#seconders") to the display box and remove from selectize list
+    importedSeconders.forEach((element) => {
+      if (element == "" || element == null || element == undefined) {
+        return;
+      }
+      console.log('ADDING TO SELECTIZE', element);
+      $("#PreSeconderSelect")[0].selectize.addItem(element, false);
+      // //seconder can't also be mover
+      // $("#PreMoverSelect")[0].selectize.removeOption(element);
+      // //prevent duplicate selections
+      // $("#PreSeconderSelect")[0].selectize.removeOption(element);
+      // //add name to the display box
+      // $("#PreSeconder").append('<div style="height: auto; width: 550px; display: block; margin-bottom: 10px;" id="' + element.trim() + '"><div style="width: 500px; display: inline-block;"><div styl="display: block;">' + element.trim() + '</div></div><div onclick="addSeconderBack(\'' + element.trim() + '\')" class="clear" style="display: inline-block; vertical-align: top; cusor: pointer;">X</div></div>');
+
+      // if ($("#seconders").val() === "") {
+      //   $("#seconders").val(element);
+      // } else {
+      //   $("#seconders").val($("#seconders").val() + ", " + element);
+      // }
+    });
+  };
+  /****************************************************************************************************************************************************************************
+                                                                                      END POPULATE MOVER INFORMATION
+  ****************************************************************************************************************************************************************************/
+
+  //Generate auth token using API User
+  function getAuthToken() {
+      const url = window.location.protocol + "//" + window.location.host + "/"
+
+    $.ajax({
+      url: url + 'token',
+      type: 'POST',
+      data: {
+        "grant_type": "password",
+        "userName": "API@primegov.com",
+        "password": "@PI@dm!n1"
+      },
+      contentType: "application/x-www-form-urlencoded",
+      dataType: 'json',
+      async: false,
+      success: function (data) {
+        console.log('auth token response', data);
+        authToken = data.access_token;
+      },
+      error: function () {
+
+      }
+    })
+
+    return authToken;
+  }
+</script>
