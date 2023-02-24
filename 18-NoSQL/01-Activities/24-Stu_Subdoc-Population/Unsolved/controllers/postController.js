@@ -1,8 +1,9 @@
-const { Post } = require('../models');
+const { Post } = require("../models");
 
 module.exports = {
   getPosts(req, res) {
     Post.find()
+      .populate({ path: "tags", select: "-__v" })
       .then((posts) => res.json(posts))
       .catch((err) => {
         console.error({ message: err });
@@ -11,9 +12,10 @@ module.exports = {
   },
   getSinglePost(req, res) {
     Post.findOne({ _id: req.params.postId })
+      .populate({ path: "tags", select: "-__v" })
       .then((post) =>
         !post
-          ? res.status(404).json({ message: 'No post with that ID' })
+          ? res.status(404).json({ message: "No post with that ID" })
           : res.json(post)
       )
       .catch((err) => res.status(500).json(err));
