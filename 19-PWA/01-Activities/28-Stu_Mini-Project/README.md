@@ -6,7 +6,6 @@ In this mini-project, you are given a simple application that needs to be update
 
 Work with your group to resolve the following issues:
 
-* As a user, I want to be able to install the web application as a PWA.
 
 * As a user, I want to be able to add and remove my contact cards.
 
@@ -23,6 +22,8 @@ Work with your group to resolve the following issues:
 * As a developer, I want to be able to run `npm run install` in the command line and have all of the client's dependencies installed.
 
 * As a developer, I want to be able to run `npm run client` in the command line and have just our client start without the server.
+
+* As a user, I want to be able to install the web application as a PWA.
 
 ## Acceptance Criteria
 
