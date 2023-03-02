@@ -12,9 +12,9 @@ Work with your group to resolve the following issues:
 
 * As a developer, I want all my scripts to run from the root directory `package.json`.
 
-* As a developer, I want to be able to run `npm run start` in the command line and have both my client and server start.
+* As a developer, I want to be able to run `npm run start:dev` in the command line and have both my client and server start.
 
-* As a developer, I want to be able to run `npm run start:prod` in the command line to run our build script and start our server.
+* As a developer, I want to be able to run `npm run start` in the command line to run our build script and start our server.
 
 * As a developer, I want to be able to run `npm run server` in the command line and have just our server start without the client.
 
@@ -40,9 +40,9 @@ The mini-project is complete when the following criteria are met:
 
 * Scripts are placed in the root and client directory's `package.json`.
 
-* `npm run start` starts both the client and server.
+* `npm run start:dev` starts both the client and server.
 
-* `npm run start:prod` runs the `build` script and starts the server.
+* `npm run start` runs the `build` script and starts the server.
 
 * `npm run server` starts just the server and not the client.
 
