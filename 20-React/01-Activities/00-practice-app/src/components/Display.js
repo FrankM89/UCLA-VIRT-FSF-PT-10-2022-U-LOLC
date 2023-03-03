@@ -14,8 +14,7 @@ export default function Display() {
         name={feline.name}
         description={feline.description}
         id={feline.id}
-      />
-      ;
+      />;
     </div>
   );
 }
