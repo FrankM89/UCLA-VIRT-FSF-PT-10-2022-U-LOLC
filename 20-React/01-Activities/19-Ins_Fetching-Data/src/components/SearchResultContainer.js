@@ -9,6 +9,7 @@ const SearchResultContainer = () => {
   const [results, setResults] = useState([]);
 
   // Method to get search results and set state
+  // Helper function
   const searchGiphy = async (query) => {
     const response = await search(query);
     setResults(response.data.data);

@@ -3,10 +3,13 @@ import React from 'react';
 import '../styles/Section.css';
 
 // TODO: Create a styles object called "styles"
-
+const styles = {
+  background: 'orange',
+}
 function Section() {
   // TODO: Add a style attribute to `section`
   return (
+    <div style={styles.sectionn}>
     <section className="section">
       <h2>Lorem Ipsum Dolor Sit Amet</h2>
       <p>
@@ -49,6 +52,7 @@ function Section() {
         asperiores repellat.
       </p>
     </section>
+    </div>
   );
 }
 
