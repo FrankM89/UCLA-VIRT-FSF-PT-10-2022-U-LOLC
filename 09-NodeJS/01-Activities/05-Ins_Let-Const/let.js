@@ -40,7 +40,7 @@ console.log(j); // prints 42
 // let c = 0;
 
 // while (c < 5) {
-//   let quadrupled = c * 3;
+//   let quadrupled = c * 4;
 //   c++;
 // }
 
