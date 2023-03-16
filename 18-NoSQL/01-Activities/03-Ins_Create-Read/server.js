@@ -1,50 +1,59 @@
 const express = require('express');
 // Run npm install mongodb and require mongodb and MongoClient class
-const mongodb = require('mongodb').MongoClient;
+const { MongoClient } = require('mongodb');
 
 const app = express();
 const port = 3001;
 
-// Connection string to local instance of MongoDB including database name
-const connectionStringURI = `mongodb://127.0.0.1:27017/shelterDB`;
+// Connection string to local instance of MongoDB
+const connectionStringURI = `mongodb://127.0.0.1:27017`;
+
+// Initialize a new instance of MongoClient
+const client = new MongoClient(connectionStringURI);
 
 // Declare a variable to hold the connection
 let db;
 
-// Creates a connection to a MongoDB instance and returns the reference to the database
-mongodb.connect(
-  // Defines connection between app and MongoDB instance
-  connectionStringURI,
-  // Sets connection string parser and Server Discover and Monitoring engine to true and avoids warning
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  (err, client) => {
+// Create variable to hold our database name
+const dbName = 'shelterDB';
+
+// Use connect method to connect to the mongo server
+client.connect()
+  .then(() => {
+    console.log('Connected successfully to MongoDB');
     // Use client.db() constructor to add new db instance
-    db = client.db();
+    db = client.db(dbName);
+
+    // start up express server
     app.listen(port, () => {
       console.log(`Example app listening at http://localhost:${port}`);
     });
-  }
-);
+  })
+  .catch((err) => {
+    console.error('Mongo connection error: ', err.message);
+  });
 
+// Built in Express function that parses incoming requests to JSON
 app.use(express.json());
 
 app.post('/create', (req, res) => {
   // Use db connection to add a document
   db.collection('petCollection').insertOne(
-    { name: req.body.name, breed: req.body.breed },
-    (err, results) => {
+    { name: req.body.name, breed: req.body.breed }
+  )
+    .then(results => res.json(results))
+    .catch(err => {
       if (err) throw err;
-      res.json(results);
-    }
-  );
+    });
 });
 
 app.get('/read', (req, res) => {
   // Use db connection to find all documents in collection
   db.collection('petCollection')
     .find()
-    .toArray((err, results) => {
+    .toArray()
+    .then(results => res.json(results))
+    .catch(err => {
       if (err) throw err;
-      res.send(results);
     });
 });
