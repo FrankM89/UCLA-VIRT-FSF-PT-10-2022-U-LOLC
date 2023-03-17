@@ -1,33 +1,37 @@
 const express = require('express');
-const mongodb = require('mongodb').MongoClient;
+const { MongoClient } = require('mongodb');
 
 const app = express();
 const port = 3001;
 
-const connectionStringURI = `mongodb://127.0.0.1:27017/authorListDB`;
+const connectionStringURI = `mongodb://127.0.0.1:27017`;
+
+const client = new MongoClient(connectionStringURI);
 
 let db;
 
-mongodb.connect(
-  connectionStringURI,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  (err, client) => {
-    db = client.db();
+const dbName = 'authorListDB';
+
+client.connect()
+  .then(() => {
+    console.log('Connected successfully to MongoDB');
+    db = client.db(dbName);
     // Drops any documents, if they exist
     db.collection('authorList').deleteMany({});
     // Adds data to database
-    db.collection('authorList').insertMany(data, (err, res) => {
-      if (err) {
-        return console.log(err);
-      }
-      console.log(res);
-    });
+    db.collection('authorList').insertMany(data)
+      .then(res => console.log(res))
+      .catch(err => {
+        if (err) return console.log(err);
+      });
 
     app.listen(port, () => {
       console.log(`Example app listening at http://localhost:${port}`);
     });
-  }
-);
+  })
+  .catch((err) => {
+    console.error('Mongo connection error: ', err.message);
+  });
 
 // Data for document
 const data = [
@@ -68,9 +72,10 @@ app.get('/price-less-than-10', (req, res) => {
   db.collection('authorList')
     // Use dot notation to query on an embedded document
     .find({ 'information.price': { $lt: 10 } })
-    .toArray((err, results) => {
+    .toArray()
+    .then(results => res.send(results))
+    .catch(err => {
       if (err) throw err;
-      res.send(results);
     });
 });
 
@@ -79,8 +84,9 @@ app.get('/featured-authors', (req, res) => {
   db.collection('authorList')
     // If you do not know the array index, use dot notation to access fields nested in arrays
     .find({ 'authors.featured': true })
-    .toArray((err, results) => {
+    .toArray()
+    .then(results => res.send(results))
+    .catch(err => {
       if (err) throw err;
-      res.send(results);
     });
 });

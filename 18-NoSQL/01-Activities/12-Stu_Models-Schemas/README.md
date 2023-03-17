@@ -4,6 +4,8 @@ Work with a partner to add comments that describe the functionality of the code 
 
 ## 📝 Notes
 
+Ensure that the `mongoose` package is using version 6+. The latest version of `mongoose` (version 7+) introduces potential breaking changes to activities. All activities have version `6.9.2` in their respective `package.json` files, but should you install `mongoose`, please use `npm i mongoose@6.9.2`.
+
 Refer to the documentation:
 
 [Mongoose docs on models](https://mongoosejs.com/docs/models.html)

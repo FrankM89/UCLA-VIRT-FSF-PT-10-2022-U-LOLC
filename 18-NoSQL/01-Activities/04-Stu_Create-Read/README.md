@@ -6,7 +6,7 @@ Work with a partner to add comments that describe the functionality of the code 
 
   Refer to the documentation:
 
-  [Express docs on Integrating MongoDB](https://expressjs.com/en/guide/database-integration.html#mongodb)
+  [Official MongoDB Node Driver docs on Connecting to Database](https://github.com/mongodb/node-mongodb-native#connect-to-mongodb)
 
   [MongoDB docs on Find a Document](https://docs.mongodb.com/manual/reference/method/db.collection.find/)
 
