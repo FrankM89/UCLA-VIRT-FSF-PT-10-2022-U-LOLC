@@ -15,8 +15,8 @@ function App() {
       <h1>22.1 State</h1>
       <h4 style={{ color: 'lightseagreen' }}>{title}</h4>
 
-      <StudentProvider>
-        <StudentList />
+      <StudentProvider> {/* PARENT */}
+        <StudentList />   {/* CHILD */}
       </StudentProvider>
     </div>
   );
