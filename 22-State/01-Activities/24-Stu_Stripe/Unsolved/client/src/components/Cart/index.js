@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
-import { useLazyQuery } from '@apollo/client';
-import { QUERY_CHECKOUT } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import CartItem from '../CartItem';
-import Auth from '../../utils/auth';
-import { useStoreContext } from '../../utils/GlobalState';
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
-import './style.css';
+import React, { useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { useLazyQuery } from "@apollo/client";
+import { QUERY_CHECKOUT } from "../../utils/queries";
+import { idbPromise } from "../../utils/helpers";
+import CartItem from "../CartItem";
+import Auth from "../../utils/auth";
+import { useStoreContext } from "../../utils/GlobalState";
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
+import "./style.css";
 
 // TODO: Add a comment describing the functionality of loadStripe
-// Your comment here
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+// Loads the loadstripe library and the string is the API key
+const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
   // TODO: Add a comment describing the functionality of the useEffect hook in this instance
-  // Your comment here
+  // Runs whenever the data variable changes, then redirects to checkout
   useEffect(() => {
     if (data) {
       stripePromise.then((res) => {
@@ -28,10 +28,11 @@ const Cart = () => {
   }, [data]);
 
   // TODO: Add a comment describing what data we are watching and what work should be preformed if that data changes
-  // Your comment here
+  // Updates the items in the cart. As items are being added, adds them to the array. Calculates price in the cart based on
+  // item price * quantity
   useEffect(() => {
     async function getCart() {
-      const cart = await idbPromise('cart', 'get');
+      const cart = await idbPromise("cart", "get");
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
 
@@ -53,7 +54,7 @@ const Cart = () => {
   }
 
   // TODO: Add a comment describing the functionality of our submitCheckout function.
-  // Your comment here
+  // Loops through cart and pushes items added to array and sends to checkout
   function submitCheckout() {
     const productIds = [];
 
